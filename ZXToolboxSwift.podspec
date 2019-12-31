@@ -15,19 +15,6 @@ Pod::Spec.new do |s|
   
   s.swift_version = '5.0'
 
-  s.frameworks = "Foundation", "UIKit"
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-  s.source_files  = "ZXToolboxSwift/ZXToolboxSwift.swift"
-
-  s.subspec "Foundation" do |ss|
-    ss.source_files  = "ZXToolboxSwift/Foundation/*.swift"
-  end
-
-  s.subspec "UIKit" do |ss|
-    ss.dependency 'ZXToolboxSwift/Foundation'
-    ss.source_files  = "ZXToolboxSwift/UIKit/*.swift"
-  end
+  s.source_files  = "ZXToolboxSwift/**/*.swift"
 
 end

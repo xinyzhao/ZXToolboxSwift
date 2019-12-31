@@ -74,7 +74,7 @@ Drag the built ZXToolboxSwift.framework into your Xcode project.
 ## Usage
 
 ```
-#import <ZXToolboxSwift/ZXToolboxSwift.h>
+import ZXToolboxSwift
 ```
 
 ## Foundation
