@@ -229,7 +229,6 @@ class TitleBarController: UIViewController {
 
     public lazy var titleLabel = { () -> UILabel in
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         label.textColor = titleTintColor
         label.textAlignment = .center
         return label

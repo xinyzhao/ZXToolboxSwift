@@ -17,18 +17,15 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
-  s.source_files  = "ZXToolboxSwift/ZXToolboxSwift.h"
-  s.public_header_files = "ZXToolboxSwift/ZXToolboxSwift.h"
+  s.source_files  = "ZXToolboxSwift/ZXToolboxSwift.swift"
 
   s.subspec "Foundation" do |ss|
-    ss.source_files  = "ZXToolboxSwift/Foundation/*.{h,m}"
-    ss.public_header_files = "ZXToolboxSwift/Foundation/*.h"
+    ss.source_files  = "ZXToolboxSwift/Foundation/*.swift"
   end
 
   s.subspec "UIKit" do |ss|
     ss.dependency 'ZXToolboxSwift/Foundation'
-    ss.source_files  = "ZXToolboxSwift/UIKit/*.{h,m}"
-    ss.public_header_files = "ZXToolboxSwift/UIKit/*.h"
+    ss.source_files  = "ZXToolboxSwift/UIKit/*.swift"
   end
 
 end
