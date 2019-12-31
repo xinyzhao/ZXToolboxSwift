@@ -25,7 +25,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     enum AnimateType {
         case bounce // 弹跳效果

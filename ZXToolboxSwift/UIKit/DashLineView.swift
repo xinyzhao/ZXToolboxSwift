@@ -25,28 +25,28 @@
 
 import UIKit
 
-class DashLineView: UIView {
+public class DashLineView: UIView {
     
-    enum Axis : Int {
+    public enum Axis : Int {
         case horizontal
         case vertical
     }
     
-    var axis: Axis = .horizontal
-    var lineCap: CGLineCap = .butt
-    var dashPhase: CGFloat = 2
-    var dashLengths: [CGFloat] = [2, 2]
-    var strokeColor: UIColor = UIColor.lightGray
+    public var axis: Axis = .horizontal
+    public var lineCap: CGLineCap = .butt
+    public var dashPhase: CGFloat = 2
+    public var dashLengths: [CGFloat] = [2, 2]
+    public var strokeColor: UIColor = UIColor.lightGray
 
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         
         var from, to: CGPoint
         var width: CGFloat

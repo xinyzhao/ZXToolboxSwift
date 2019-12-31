@@ -25,16 +25,16 @@
 
 import UIKit
 
-class TitleBarController: UIViewController {
+open class TitleBarController: UIViewController {
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         //
         remakeTitleBarConstraints()
         updateTitle()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //
         if let nc = navigationController {
@@ -43,13 +43,13 @@ class TitleBarController: UIViewController {
         updateTitle()
     }
     
-    override func viewDidLayoutSubviews() {
+    override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //
         view.bringSubviewToFront(titleBar)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //
         if let nc = navigationController, !navigationBarHiddenWhenDisappear {
@@ -58,7 +58,7 @@ class TitleBarController: UIViewController {
     }
     
     @available(iOS 11.0, *)
-    override func viewSafeAreaInsetsDidChange() {
+    override open func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         //
         remakeTitleBarConstraints()
@@ -106,11 +106,11 @@ class TitleBarController: UIViewController {
     
     // MARK: UIStatusBar
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle
     }
     
-    override var prefersStatusBarHidden: Bool {
+    override open var prefersStatusBarHidden: Bool {
         return statusBarHidden
     }
     
@@ -125,7 +125,7 @@ class TitleBarController: UIViewController {
     
     // MARK: Title View
     
-    override var title: String? {
+    override open var title: String? {
         didSet {
             self.titleLabel.text = title
         }
