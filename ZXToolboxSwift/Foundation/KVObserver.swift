@@ -53,6 +53,10 @@ public class KVObserver<T>: NSObject {
         if let object = object, let keyPath = keyPath {
             object.removeObserver(self, forKeyPath: keyPath)
         }
+        self.object = nil
+        self.keyPath = nil
+        self.options = nil
+        self.observeValue = nil
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
