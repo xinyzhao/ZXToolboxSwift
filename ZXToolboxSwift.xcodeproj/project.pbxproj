@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfter.swift */; };
+		5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */; };
 		701017DE23BB548E00F0CF9A /* KVObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017D823BB548E00F0CF9A /* KVObserver.swift */; };
 		701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */; };
 		701017E023BB548E00F0CF9A /* DashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DB23BB548E00F0CF9A /* DashLineView.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+AsyncAfter.swift"; sourceTree = "<group>"; };
+		5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+AsyncAfterEvent.swift"; sourceTree = "<group>"; };
 		701017D423BB544D00F0CF9A /* ZXToolboxSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZXToolboxSwift.podspec; sourceTree = "<group>"; };
 		701017D523BB544D00F0CF9A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		701017D623BB544D00F0CF9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		701017D723BB548E00F0CF9A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfter.swift */,
+				5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */,
 				701017D823BB548E00F0CF9A /* KVObserver.swift */,
 			);
 			path = Foundation;
@@ -238,7 +238,7 @@
 				701017DE23BB548E00F0CF9A /* KVObserver.swift in Sources */,
 				701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */,
 				701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */,
-				5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfter.swift in Sources */,
+				5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */,
 				701017E123BB548E00F0CF9A /* TitleBarController.swift in Sources */,
 				701017E023BB548E00F0CF9A /* DashLineView.swift in Sources */,
 			);
