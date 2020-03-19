@@ -42,9 +42,6 @@ public extension UIView {
     ///   - duration: 动画时间
     func animate(from: AnimateType, duration: TimeInterval = 0.3) {
         let view = self
-        if !view.isHidden {
-            return
-        }
         view.layer.removeAllAnimations()
         switch from {
         case .bounce:
@@ -109,9 +106,9 @@ public extension UIView {
     /// - Parameters:
     ///   - from: 动画类型
     ///   - duration: 动画时间
-    func animate(to: AnimateType, duration: TimeInterval = 0.3) {
+    func animate(to: AnimateType, duration: TimeInterval = 0.3, hidesWhenFinished: Bool = true) {
         let view = self
-        if view.isHidden {
+        if view.isHidden, view.alpha <= 0.0 {
             return
         }
         view.layer.removeAllAnimations()
@@ -125,7 +122,7 @@ public extension UIView {
                     view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 }
             }) { (finished) in
-                if finished {
+                if finished, hidesWhenFinished {
                     view.isHidden = true
                 }
             }
@@ -134,7 +131,7 @@ public extension UIView {
             UIView.animate(withDuration: duration, animations: {
                 view.alpha = 0.0
             }) { (finished) in
-                if finished {
+                if finished, hidesWhenFinished {
                     view.isHidden = true
                 }
             }
@@ -160,7 +157,7 @@ public extension UIView {
             UIView.animate(withDuration: duration, animations: {
                 view.transform = transform
             }) { (finished) in
-                if finished {
+                if finished, hidesWhenFinished {
                     view.isHidden = true
                 }
             }
