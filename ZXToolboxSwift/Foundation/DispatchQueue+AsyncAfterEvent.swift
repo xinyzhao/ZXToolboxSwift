@@ -25,16 +25,16 @@
 
 import Foundation
 
-var DispatchQueueAsyncAfterEvent = "DispatchQueueAsyncAfterEvent"
+let kDispatchQueueUUIDKey: UnsafeRawPointer! = UnsafeRawPointer(bitPattern: "DispatchQueue.uuids".hashValue)
 
 extension DispatchQueue {
     
     private var uuids: [String:String] {
         set {
-            objc_setAssociatedObject(self, &DispatchQueueAsyncAfterEvent, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, kDispatchQueueUUIDKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            if let obj = objc_getAssociatedObject(self, &DispatchQueueAsyncAfterEvent) as? [String : String] {
+            if let obj = objc_getAssociatedObject(self, kDispatchQueueUUIDKey) as? [String : String] {
                 return obj
             }
             let uuids = [String:String]()
