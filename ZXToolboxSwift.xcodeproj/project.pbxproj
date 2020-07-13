@@ -13,6 +13,7 @@
 		701017E023BB548E00F0CF9A /* DashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DB23BB548E00F0CF9A /* DashLineView.swift */; };
 		701017E123BB548E00F0CF9A /* TitleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DC23BB548E00F0CF9A /* TitleBarController.swift */; };
 		701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DD23BB548E00F0CF9A /* UIView+Animation.swift */; };
+		709DF55F24BC0FC400075E6F /* Array+SafeSubscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709DF55E24BC0FC400075E6F /* Array+SafeSubscripts.swift */; };
 		70C8308023AB1DF2005D0C0B /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; };
 		70C8308523AB1DF2005D0C0B /* ZXToolboxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C8308423AB1DF2005D0C0B /* ZXToolboxSwiftTests.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +39,7 @@
 		701017DB23BB548E00F0CF9A /* DashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLineView.swift; sourceTree = "<group>"; };
 		701017DC23BB548E00F0CF9A /* TitleBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarController.swift; sourceTree = "<group>"; };
 		701017DD23BB548E00F0CF9A /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		709DF55E24BC0FC400075E6F /* Array+SafeSubscripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SafeSubscripts.swift"; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		701017D723BB548E00F0CF9A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				709DF55E24BC0FC400075E6F /* Array+SafeSubscripts.swift */,
 				5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */,
 				701017D823BB548E00F0CF9A /* KVObserver.swift */,
 			);
@@ -241,6 +244,7 @@
 				5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */,
 				701017E123BB548E00F0CF9A /* TitleBarController.swift in Sources */,
 				701017E023BB548E00F0CF9A /* DashLineView.swift in Sources */,
+				709DF55F24BC0FC400075E6F /* Array+SafeSubscripts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200628;
+				CURRENT_PROJECT_VERSION = 20200713;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -399,7 +403,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -413,7 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20200628;
+				CURRENT_PROJECT_VERSION = 20200713;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -425,7 +429,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

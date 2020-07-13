@@ -27,13 +27,14 @@ import UIKit
 
 public extension UIView {
     
+    /// 动画类型
     enum AnimateType {
         case bounce // 弹跳效果
-        case fade // 渐显渐隐
-        case top // 从顶部进入
-        case bottom // 从下部进入
-        case left // 从左边进入
-        case right // 从右边进入
+        case fade // 渐显/渐隐
+        case top // 从顶部进入/消失
+        case bottom // 从下部进入/消失
+        case left // 从左边进入/消失
+        case right // 从右边进入/消失
     }
     
     /// 显示view
