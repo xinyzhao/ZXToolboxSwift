@@ -234,7 +234,7 @@ open class TitleBarController: UIViewController {
         return label
     }()
     
-    lazy var shadowView: UIImageView = {
+    public lazy var shadowView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
         return view
