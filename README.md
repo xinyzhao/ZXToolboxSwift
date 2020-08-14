@@ -79,7 +79,6 @@ import ZXToolboxSwift
 
 ## Foundation
 
-* Array+SafeSubscripts
 * KVObserver
 * DispatchQueue+AsyncAfterEvent
 
