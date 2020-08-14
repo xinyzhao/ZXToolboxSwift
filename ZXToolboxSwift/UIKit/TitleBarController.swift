@@ -83,7 +83,7 @@ open class TitleBarController: UIViewController {
     /// - Parameter defaultStyle: 标题栏隐藏时状态栏风格
     /// - Parameter opacityStyle: 标题栏显示时状态栏风格
     public func scrollViewDidScroll(_ scrollView: UIScrollView, offset: CGFloat = 0, length: CGFloat = 0, defaultStyle: UIStatusBarStyle = .default, opacityStyle: UIStatusBarStyle = .default) {
-        self.scrollObserver.addObserver(scrollView, forKeyPath: keyPath, options: [.new]) { [weak self](contentOffset) in
+        self.scrollObserver.addObserver(scrollView, forKeyPath: keyPath, options: [.new]) { [weak self](_, contentOffset) in
             guard let self = self else { return }
             //
             var alpha: CGFloat = 0

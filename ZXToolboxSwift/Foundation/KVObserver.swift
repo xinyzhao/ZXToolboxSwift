@@ -27,7 +27,7 @@ import Foundation
 
 public class KVObserver<T>: NSObject {
 
-    public typealias KVObserveValue<T> = (_ value: T) -> Void
+    public typealias KVObserveValue<T> = (_ key: NSKeyValueChangeKey, _ value: T) -> Void
 
     private var object: NSObject?
     private var keyPath: String?
@@ -61,9 +61,9 @@ public class KVObserver<T>: NSObject {
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == self.keyPath, let change = change, let observeValue = observeValue {
-            for (_, value) in change {
+            for (key, value) in change {
                 if let v = value as? T {
-                    observeValue(v)
+                    observeValue(key, v)
                 }
             }
         }
