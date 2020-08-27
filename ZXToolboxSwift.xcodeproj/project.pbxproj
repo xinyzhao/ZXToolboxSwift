@@ -16,6 +16,7 @@
 		70C8308023AB1DF2005D0C0B /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; };
 		70C8308523AB1DF2005D0C0B /* ZXToolboxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C8308423AB1DF2005D0C0B /* ZXToolboxSwiftTests.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		70C8307F23AB1DF2005D0C0B /* ZXToolboxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXToolboxSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8308423AB1DF2005D0C0B /* ZXToolboxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXToolboxSwiftTests.swift; sourceTree = "<group>"; };
 		70C8308623AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				701017DB23BB548E00F0CF9A /* DashLineView.swift */,
 				701017DC23BB548E00F0CF9A /* TitleBarController.swift */,
 				701017DD23BB548E00F0CF9A /* UIView+Animation.swift */,
+				70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */,
 				701017E123BB548E00F0CF9A /* TitleBarController.swift in Sources */,
 				701017E023BB548E00F0CF9A /* DashLineView.swift in Sources */,
+				70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.08.14;
+				CURRENT_PROJECT_VERSION = 2020.08.27;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -399,7 +403,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.9;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -413,7 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.08.14;
+				CURRENT_PROJECT_VERSION = 2020.08.27;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -425,7 +429,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.9;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

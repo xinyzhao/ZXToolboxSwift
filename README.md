@@ -88,6 +88,7 @@ import ZXToolboxSwift
 * DashLineView
 * TitleBarController
 * UIView+Animation
+* UIViewController+Alert
 
 ## License
 
