@@ -39,6 +39,7 @@
 		701017DB23BB548E00F0CF9A /* DashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLineView.swift; sourceTree = "<group>"; };
 		701017DC23BB548E00F0CF9A /* TitleBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBarController.swift; sourceTree = "<group>"; };
 		701017DD23BB548E00F0CF9A /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		702F4AC92521B93300A2BE6E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				701017D523BB544D00F0CF9A /* LICENSE */,
+				702F4AC92521B93300A2BE6E /* Package.swift */,
 				701017D623BB544D00F0CF9A /* README.md */,
 				701017D423BB544D00F0CF9A /* ZXToolboxSwift.podspec */,
 				70C8307823AB1DF2005D0C0B /* ZXToolboxSwift */,
