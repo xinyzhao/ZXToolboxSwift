@@ -1,5 +1,5 @@
 //
-// DashLineView.swift
+// ZXDashLineView.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2019-2020 Zhao Xin
@@ -25,7 +25,7 @@
 
 import UIKit
 
-public class DashLineView: UIView {
+public class ZXDashLineView: UIView {
     
     public enum Axis : Int {
         case horizontal

@@ -1,5 +1,5 @@
 //
-// CAGradientLayer+Direction.swift
+// CAGradientLayer+StartToEnd.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2019-2020 Zhao Xin
@@ -25,11 +25,11 @@
 
 import UIKit
 
-private var kCAGradientLayerDirectionKey = "direction"
+private var kCAGradientLayerStartToEnd = "startToEnd"
 
 extension CAGradientLayer {
     
-    public enum Direction: Int {
+    public enum StartToEnd: Int {
         case topToBottom = 0 // 从上到下
         case topLeftToBottomRight // 左上到右下
         case topRightToBottomLeft // 右上到左下
@@ -40,15 +40,15 @@ extension CAGradientLayer {
         case rightToLeft // 从右到左
     }
     
-    public var direction: Direction {
+    public var startToEnd: StartToEnd {
         get {
-            if let dir = objc_getAssociatedObject(self, &kCAGradientLayerDirectionKey) as? Direction {
+            if let dir = objc_getAssociatedObject(self, &kCAGradientLayerStartToEnd) as? StartToEnd {
                 return dir
             }
             return .topToBottom
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &kCAGradientLayerDirectionKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self, &kCAGradientLayerStartToEnd, newValue, .OBJC_ASSOCIATION_ASSIGN)
             switch newValue {
             case .topToBottom:
                 self.startPoint = topPoint

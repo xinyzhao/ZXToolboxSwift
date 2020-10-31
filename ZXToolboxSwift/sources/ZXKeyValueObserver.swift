@@ -1,5 +1,5 @@
 //
-// KVObserver.swift
+// ZXKeyValueObserver.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2019-2020 Zhao Xin
@@ -25,16 +25,17 @@
 
 import Foundation
 
-public class KVObserver<T>: NSObject {
+public class ZXKeyValueObserver<T>: NSObject {
 
-    public typealias KVObserveValue<T> = (_ key: NSKeyValueChangeKey, _ value: T) -> Void
+    public typealias ZXObserveValue<T> = (_ key: NSKeyValueChangeKey, _ value: T) -> Void
 
     private var object: NSObject?
     private var keyPath: String?
     private var options: NSKeyValueObservingOptions?
-    private var observeValue: KVObserveValue<T>?
+    private var context: UnsafeMutableRawPointer?
+    private var observeValue: ZXObserveValue<T>?
 
-    public func addObserver(_ object: NSObject, forKeyPath keyPath: String, options: NSKeyValueObservingOptions, observeValue: KVObserveValue<T>?) {
+    public func addObserver(_ object: NSObject, forKeyPath keyPath: String, options: NSKeyValueObservingOptions = [], context: UnsafeMutableRawPointer? = nil, observeValue: ZXObserveValue<T>?) {
         removeObserver()
         self.object = object
         self.keyPath = keyPath
@@ -45,7 +46,7 @@ public class KVObserver<T>: NSObject {
     
     private func addObserver() {
         if let object = object, let keyPath = keyPath, let options = options {
-            object.addObserver(self, forKeyPath: keyPath, options: options, context: nil)
+            object.addObserver(self, forKeyPath: keyPath, options: options, context: context)
         }
     }
     
@@ -56,6 +57,7 @@ public class KVObserver<T>: NSObject {
         self.object = nil
         self.keyPath = nil
         self.options = nil
+        self.context = nil
         self.observeValue = nil
     }
     

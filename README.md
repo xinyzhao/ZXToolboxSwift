@@ -77,18 +77,18 @@ Drag the built ZXToolboxSwift.framework into your Xcode project.
 import ZXToolboxSwift
 ```
 
-## Foundation
+## Extensions
 
-* KVObserver
+* CAGradientLayer+StartToEnd
 * DispatchQueue+AsyncAfterEvent
-
-## UIKit
-
-* CAGradientLayer+Direction
-* DashLineView
-* TitleBarController
 * UIView+Animation
 * UIViewController+Alert
+
+## Sources
+
+* ZXDashLineView
+* ZXKeyValueObserver
+* ZXTitleBarController
 
 ## License
 

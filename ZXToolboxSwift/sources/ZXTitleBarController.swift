@@ -1,5 +1,5 @@
 //
-// TitleBarController.swift
+// ZXTitleBarController.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2019-2020 Zhao Xin
@@ -25,7 +25,7 @@
 
 import UIKit
 
-open class TitleBarController: UIViewController {
+open class ZXTitleBarController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ open class TitleBarController: UIViewController {
 
     // MARK: UIScrollView
     
-    private var scrollObserver = KVObserver<CGPoint>()
+    private var scrollObserver = ZXKeyValueObserver<CGPoint>()
     private let keyPath = #keyPath(UIScrollView.contentOffset)
 
     /// 根据滚动位置显示/隐藏导航栏
