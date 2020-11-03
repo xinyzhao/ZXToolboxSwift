@@ -21,7 +21,8 @@
 		7049B15E2543E2C800AEAC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7049B15C2543E2C800AEAC42 /* LaunchScreen.storyboard */; };
 		7049B16A2543E31F00AEAC42 /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; };
 		7049B16B2543E31F00AEAC42 /* ZXToolboxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7069B694254C180A00E4DFAD /* CAGradientLayerStartToEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B693254C180A00E4DFAD /* CAGradientLayerStartToEnd.swift */; };
+		7069B694254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */; };
+		70BFC88B2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +70,8 @@
 		7049B15A2543E2C800AEAC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7049B15D2543E2C800AEAC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7049B15F2543E2C800AEAC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7069B693254C180A00E4DFAD /* CAGradientLayerStartToEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerStartToEnd.swift; sourceTree = "<group>"; };
+		7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerStartToEndViewController.swift; sourceTree = "<group>"; };
+		70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueAsyncAfterEventViewController.swift; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +120,8 @@
 		7069B692254C17E900E4DFAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7069B693254C180A00E4DFAD /* CAGradientLayerStartToEnd.swift */,
+				7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */,
+				70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7069B694254C180A00E4DFAD /* CAGradientLayerStartToEnd.swift in Sources */,
+				7069B694254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift in Sources */,
+				70BFC88B2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift in Sources */,
 				7049B1562543E2C100AEAC42 /* ViewController.swift in Sources */,
 				7049B1522543E2C100AEAC42 /* AppDelegate.swift in Sources */,
 			);

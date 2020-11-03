@@ -1,5 +1,5 @@
 //
-//  CAGradientLayerStartToEnd.swift
+//  CAGradientLayerStartToEndViewController.swift
 //  ZXToolboxSwiftDemo
 //
 //  Created by xyz on 2020/10/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CAGradientLayerStartToEnd: UIViewController {
+class CAGradientLayerStartToEndViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
@@ -42,7 +42,7 @@ class CAGradientLayerStartToEnd: UIViewController {
     }
 }
 
-extension CAGradientLayerStartToEnd: UITableViewDataSource {
+extension CAGradientLayerStartToEndViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return styles.count
@@ -58,7 +58,7 @@ extension CAGradientLayerStartToEnd: UITableViewDataSource {
     }
 }
 
-extension CAGradientLayerStartToEnd: UITableViewDelegate {
+extension CAGradientLayerStartToEndViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
