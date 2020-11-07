@@ -41,7 +41,7 @@ public extension UIView {
     /// - Parameters:
     ///   - from: 动画类型
     ///   - duration: 动画时间
-    func animate(from: AnimateType, duration: TimeInterval = 0.3) {
+    func animate(from: AnimateType, duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         view.layer.removeAllAnimations()
         switch from {
@@ -59,6 +59,9 @@ public extension UIView {
                 if finished {
                     view.transform = CGAffineTransform.identity
                 }
+                if let closure = completion {
+                    closure(finished)
+                }
             }
             break
         case .fade:
@@ -69,6 +72,9 @@ public extension UIView {
             }) { (finished) in
                 if finished {
                     view.alpha = 1.0
+                }
+                if let closure = completion {
+                    closure(finished)
                 }
             }
             break
@@ -98,6 +104,9 @@ public extension UIView {
                 if finished {
                     view.transform = CGAffineTransform.identity
                 }
+                if let closure = completion {
+                    closure(finished)
+                }
             }
             break
         }
@@ -107,7 +116,7 @@ public extension UIView {
     /// - Parameters:
     ///   - from: 动画类型
     ///   - duration: 动画时间
-    func animate(to: AnimateType, duration: TimeInterval = 0.3, hidesWhenFinished: Bool = true) {
+    func animate(to: AnimateType, duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         if view.isHidden, view.alpha <= 0.0 {
             return
@@ -123,7 +132,9 @@ public extension UIView {
                     view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 }
             }) { (finished) in
-                if finished, hidesWhenFinished {
+                if let closure = completion {
+                    closure(finished)
+                } else if finished {
                     view.isHidden = true
                 }
             }
@@ -132,7 +143,9 @@ public extension UIView {
             UIView.animate(withDuration: duration, animations: {
                 view.alpha = 0.0
             }) { (finished) in
-                if finished, hidesWhenFinished {
+                if let closure = completion {
+                    closure(finished)
+                } else if finished {
                     view.isHidden = true
                 }
             }
@@ -158,7 +171,9 @@ public extension UIView {
             UIView.animate(withDuration: duration, animations: {
                 view.transform = transform
             }) { (finished) in
-                if finished, hidesWhenFinished {
+                if let closure = completion {
+                    closure(finished)
+                } else if finished {
                     view.isHidden = true
                 }
             }
