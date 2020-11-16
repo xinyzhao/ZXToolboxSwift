@@ -25,26 +25,41 @@
 
 import UIKit
 
+public func CATransform3DMakePerspective(_ angle: CGFloat, _ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ m34: CGFloat) -> CATransform3D {
+    let t = CATransform3DMakeRotation(angle, x, y, z)
+    var p = CATransform3DIdentity
+    p.m34 = m34
+    return CATransform3DConcat(t, p)
+}
+
 public extension UIView {
     
     /// 动画类型
-    enum AnimateType {
+    enum AnimationType {
         case bounce // 弹跳效果
         case fade // 渐显/渐隐
-        case top // 从顶部进入/消失
-        case bottom // 从下部进入/消失
-        case left // 从左边进入/消失
-        case right // 从右边进入/消失
+        case flip // 180度翻转
+        case translation // 平移
+    }
+    
+    /// 动画子类型
+    enum AnimationSubtype {
+        case none
+        case top
+        case bottom
+        case left
+        case right
     }
     
     /// 显示view
     /// - Parameters:
     ///   - from: 动画类型
     ///   - duration: 动画时间
-    func animate(from: AnimateType, duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
+    func animate(_ type: AnimationType, from: AnimationSubtype,
+                 duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         view.layer.removeAllAnimations()
-        switch from {
+        switch type {
         case .bounce:
             view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             view.isHidden = false
@@ -78,7 +93,43 @@ public extension UIView {
                 }
             }
             break
-        default:
+        case .flip:
+            view.alpha = 1.0
+            view.isHidden = false
+            //
+            var angle: CGFloat
+            var point: CGPoint = .zero
+            switch from {
+            case .top:
+                angle = -CGFloat.pi / 2
+                point.x = 1
+            case .bottom:
+                angle = CGFloat.pi / 2
+                point.x = 1
+            case .left:
+                angle = CGFloat.pi / 2
+                point.y = 1
+            case .right:
+                angle = -CGFloat.pi / 2
+                point.y = 1
+            case .none:
+                angle = 0
+            }
+            let m34 = CGFloat(-1.0 / 500)
+            let flip = CATransform3DMakePerspective(angle, point.x, point.y, 0, m34)
+            //
+            let anim = CABasicAnimation(keyPath: #keyPath(transform))
+            anim.fromValue = CATransform3DIdentity
+            anim.toValue = flip
+            anim.duration = duration
+            anim.isRemovedOnCompletion = false
+            if let delegate = animationDelegate {
+                delegate.didCompletion = completion
+                delegate.add(anim, forKey: .transformFlip)
+            }
+            //
+            break
+        case .translation:
             var transform = view.transform
             switch from {
             case .top:
@@ -116,13 +167,14 @@ public extension UIView {
     /// - Parameters:
     ///   - from: 动画类型
     ///   - duration: 动画时间
-    func animate(to: AnimateType, duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
+    func animate(_ type: AnimationType, to: AnimationSubtype,
+                 duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         if view.isHidden, view.alpha <= 0.0 {
             return
         }
         view.layer.removeAllAnimations()
-        switch to {
+        switch type {
         case .bounce:
             UIView.animateKeyframes(withDuration: duration, delay: 0, options: .calculationModeCubic, animations: {
                 UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
@@ -150,7 +202,40 @@ public extension UIView {
                 }
             }
             break
-        default:
+        case .flip:
+            var angle: CGFloat
+            var point: CGPoint = .zero
+            switch to {
+            case .top:
+                angle = CGFloat.pi / 2
+                point.x = 1
+            case .bottom:
+                angle = -CGFloat.pi / 2
+                point.x = 1
+            case .left:
+                angle = -CGFloat.pi / 2
+                point.y = 1
+            case .right:
+                angle = CGFloat.pi / 2
+                point.y = 1
+            case .none:
+                angle = 0
+            }
+            let m34 = CGFloat(-1.0 / 500)
+            let flip = CATransform3DMakePerspective(angle, point.x, point.y, 0, m34)
+            //
+            let anim = CABasicAnimation(keyPath: #keyPath(transform))
+            anim.fromValue = CATransform3DIdentity
+            anim.toValue = flip
+            anim.duration = duration
+            anim.isRemovedOnCompletion = false
+            if let delegate = animationDelegate {
+                delegate.didCompletion = completion
+                delegate.add(anim, forKey: .transformFlip)
+            }
+            //
+            break
+        case .translation:
             var transform = view.transform
             switch to {
             case .top:
@@ -178,6 +263,67 @@ public extension UIView {
                 }
             }
             break
+        }
+    }
+}
+
+extension UIView {
+    private struct AssociationKey {
+        static var animationDelegate: Int = 0
+    }
+    
+    private var animationDelegate: CALayerAnimationDelegate? {
+        get {
+            var obj = objc_getAssociatedObject(self, &AssociationKey.animationDelegate) as? CALayerAnimationDelegate
+            if obj == nil {
+                obj = CALayerAnimationDelegate(with: self)
+                self.animationDelegate = obj
+            }
+            return obj
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociationKey.animationDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+}
+
+class CALayerAnimationDelegate: NSObject, CAAnimationDelegate {
+    
+    private weak var view: UIView? = nil
+    
+    enum Key: String, CaseIterable {
+        case transformFlip
+    }
+    
+    var didCompletion: ((_ finished: Bool) -> Void)?
+    
+    public init(with view: UIView) {
+        super.init()
+        self.view = view
+    }
+    
+    public func add(_ anim: CAAnimation, forKey key: Key) {
+        anim.delegate = self
+        if let layer = view?.layer {
+            layer.add(anim, forKey: key.rawValue)
+        }
+    }
+    
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        guard let view = view else {
+            return
+        }
+        guard let keys = view.layer.animationKeys() else {
+            return
+        }
+        for key in keys {
+            if let ani = view.layer.animation(forKey: key), ani == anim {
+                view.layer.removeAnimation(forKey: key)
+                if let closure = didCompletion {
+                    closure(flag)
+                }
+                break
+            }
         }
     }
 }
