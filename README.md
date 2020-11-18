@@ -87,7 +87,6 @@ import ZXToolboxSwift
 ## Sources
 
 * ZXDashLineView
-* ZXKeyValueObserver
 * ZXTitleBarController
 
 ## License

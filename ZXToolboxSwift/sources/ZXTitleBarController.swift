@@ -65,7 +65,7 @@ open class ZXTitleBarController: UIViewController {
     }
     
     deinit {
-        scrollObserver.removeObserver()
+        scrollObserver?.invalidate()
     }
     
     /// 消失时是否隐藏导航条，在 Push/Present 到无导航栏页面时设置为 true
@@ -73,8 +73,7 @@ open class ZXTitleBarController: UIViewController {
 
     // MARK: UIScrollView
     
-    private var scrollObserver = ZXKeyValueObserver<CGPoint>()
-    private let keyPath = #keyPath(UIScrollView.contentOffset)
+    private var scrollObserver: NSKeyValueObservation?
 
     /// 根据滚动位置显示/隐藏导航栏
     /// - Parameter scrollView: 滚动视图
@@ -83,8 +82,10 @@ open class ZXTitleBarController: UIViewController {
     /// - Parameter defaultStyle: 标题栏隐藏时状态栏风格
     /// - Parameter opacityStyle: 标题栏显示时状态栏风格
     public func scrollViewDidScroll(_ scrollView: UIScrollView, offset: CGFloat = 0, length: CGFloat = 0, defaultStyle: UIStatusBarStyle = .default, opacityStyle: UIStatusBarStyle = .default) {
-        self.scrollObserver.addObserver(scrollView, forKeyPath: keyPath, options: [.new]) { [weak self](_, contentOffset) in
+        scrollObserver?.invalidate()
+        scrollObserver = scrollView.observe(\.contentOffset, options: [.new]) { [weak self] (scrollView, change) in
             guard let self = self else { return }
+            guard let contentOffset = change.newValue else { return }
             //
             var alpha: CGFloat = 0
             if length > 0 {
