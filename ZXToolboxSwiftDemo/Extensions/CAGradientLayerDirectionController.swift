@@ -1,5 +1,5 @@
 //
-//  CAGradientLayerStartToEndViewController.swift
+//  CAGradientLayerDirectionController.swift
 //  ZXToolboxSwiftDemo
 //
 //  Created by xyz on 2020/10/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CAGradientLayerStartToEndViewController: UIViewController {
+class CAGradientLayerDirectionController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
@@ -42,7 +42,7 @@ class CAGradientLayerStartToEndViewController: UIViewController {
     }
 }
 
-extension CAGradientLayerStartToEndViewController: UITableViewDataSource {
+extension CAGradientLayerDirectionController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return styles.count
@@ -58,13 +58,13 @@ extension CAGradientLayerStartToEndViewController: UITableViewDataSource {
     }
 }
 
-extension CAGradientLayerStartToEndViewController: UITableViewDelegate {
+extension CAGradientLayerDirectionController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
-        if let ste = CAGradientLayer.StartToEnd(rawValue: indexPath.row) {
-            gradientLayer.startToEnd = ste
+        if let dir = CAGradientLayer.Direction(rawValue: indexPath.row) {
+            gradientLayer.direction = dir
         }
     }
     

@@ -10,18 +10,19 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let groups = ["Extensions": [
-        "CAGradientLayer+StartToEnd",
-        "DispatchQueue+AsyncAfterEvent",
-        "UIView+Animation",
-        "UIViewController+Alert"
-    ],
-    "Sources": [
-        "ZXDashLineView",
-        "ZXKeyValueObserver",
-        "ZXTitleBarController",
-        "ZXURL"
-    ]
+    let groups = [
+        "Classes": [
+            "ZXDashLineView",
+            "ZXLocale",
+            "ZXTitleBarController",
+            "ZXURL"
+        ],
+        "Extensions": [
+            "CAGradientLayer+Direction",
+            "DispatchQueue+Event",
+            "UIView+Animation",
+            "UIViewController+Alert"
+        ]
     ]
 
     override func viewDidLoad() {

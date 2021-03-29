@@ -1,5 +1,5 @@
 //
-//  DispatchQueueAsyncAfterEventViewController.swift
+//  DispatchQueueAsyncAfterEventController.swift
 //  ZXToolboxSwiftDemo
 //
 //  Created by xyz on 2020/11/3.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DispatchQueueAsyncAfterEventViewController: UIViewController {
+class DispatchQueueEventController: UIViewController {
 
     @IBOutlet weak var eventField: UITextField!
     @IBOutlet weak var delayField: UITextField!
@@ -32,7 +32,7 @@ class DispatchQueueAsyncAfterEventViewController: UIViewController {
     }
 }
 
-extension DispatchQueueAsyncAfterEventViewController {
+extension DispatchQueueEventController {
     
     @IBAction func onRandom(_ sender: Any?) {
         let uuid = UUID().uuidString
@@ -86,7 +86,7 @@ extension DispatchQueueAsyncAfterEventViewController {
     }
 }
 
-extension DispatchQueueAsyncAfterEventViewController: UITableViewDataSource {
+extension DispatchQueueEventController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }

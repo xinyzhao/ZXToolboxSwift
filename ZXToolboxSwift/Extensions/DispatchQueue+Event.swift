@@ -1,5 +1,5 @@
 //
-// DispatchQueue+AsyncAfterEvent.swift
+// DispatchQueue+Event.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2020 Zhao Xin

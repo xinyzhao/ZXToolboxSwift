@@ -47,7 +47,6 @@ public class ZXDashLineView: UIView {
     }
     
     override public func draw(_ rect: CGRect) {
-        
         var from, to: CGPoint
         var width: CGFloat
         switch axis {
@@ -55,12 +54,12 @@ public class ZXDashLineView: UIView {
             from = CGPoint(x: 0, y: bounds.midY)
             to = CGPoint(x: bounds.width, y: bounds.midY)
             width = bounds.height
-        default:
+        case .vertical:
             from = CGPoint(x: bounds.midX, y: 0)
             to = CGPoint(x: bounds.midX, y: bounds.height)
             width = bounds.width
         }
-        
+        //
         if let context = UIGraphicsGetCurrentContext() {
             context.clear(rect)
             context.setFillColor(self.backgroundColor?.cgColor ?? UIColor.white.cgColor)
@@ -78,5 +77,4 @@ public class ZXDashLineView: UIView {
             //context.closePath()
         }
     }
-    
 }

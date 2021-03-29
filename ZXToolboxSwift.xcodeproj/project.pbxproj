@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */; };
+		5D01DC30241B6F69004989FB /* DispatchQueue+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D01DC2F241B6F69004989FB /* DispatchQueue+Event.swift */; };
 		7001FC2C25289DC70080B220 /* ZXURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7001FC2925289DC70080B220 /* ZXURL.swift */; };
-		701017DF23BB548E00F0CF9A /* CAGradientLayer+StartToEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DA23BB548E00F0CF9A /* CAGradientLayer+StartToEnd.swift */; };
+		701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */; };
 		701017E023BB548E00F0CF9A /* ZXDashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DB23BB548E00F0CF9A /* ZXDashLineView.swift */; };
 		701017E123BB548E00F0CF9A /* ZXTitleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DC23BB548E00F0CF9A /* ZXTitleBarController.swift */; };
 		701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DD23BB548E00F0CF9A /* UIView+Animation.swift */; };
@@ -20,8 +20,11 @@
 		7049B15E2543E2C800AEAC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7049B15C2543E2C800AEAC42 /* LaunchScreen.storyboard */; };
 		7049B16A2543E31F00AEAC42 /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; };
 		7049B16B2543E31F00AEAC42 /* ZXToolboxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7069B694254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */; };
-		70BFC88B2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */; };
+		7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */; };
+		70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656B926117C4300EC5194 /* ZXLocale.swift */; };
+		70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656C42611D12500EC5194 /* ZXLocaleController.swift */; };
+		70A656D32611D63A00EC5194 /* i18n.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70A656D22611D63A00EC5194 /* i18n.bundle */; };
+		70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
@@ -51,12 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+AsyncAfterEvent.swift"; sourceTree = "<group>"; };
+		5D01DC2F241B6F69004989FB /* DispatchQueue+Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Event.swift"; sourceTree = "<group>"; };
 		7001FC2925289DC70080B220 /* ZXURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXURL.swift; sourceTree = "<group>"; };
 		701017D423BB544D00F0CF9A /* ZXToolboxSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZXToolboxSwift.podspec; sourceTree = "<group>"; };
 		701017D523BB544D00F0CF9A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		701017D623BB544D00F0CF9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		701017DA23BB548E00F0CF9A /* CAGradientLayer+StartToEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+StartToEnd.swift"; sourceTree = "<group>"; };
+		701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Direction.swift"; sourceTree = "<group>"; };
 		701017DB23BB548E00F0CF9A /* ZXDashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXDashLineView.swift; sourceTree = "<group>"; };
 		701017DC23BB548E00F0CF9A /* ZXTitleBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXTitleBarController.swift; sourceTree = "<group>"; };
 		701017DD23BB548E00F0CF9A /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
@@ -68,8 +71,11 @@
 		7049B15A2543E2C800AEAC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7049B15D2543E2C800AEAC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7049B15F2543E2C800AEAC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerStartToEndViewController.swift; sourceTree = "<group>"; };
-		70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueAsyncAfterEventViewController.swift; sourceTree = "<group>"; };
+		7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerDirectionController.swift; sourceTree = "<group>"; };
+		70A656B926117C4300EC5194 /* ZXLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXLocale.swift; sourceTree = "<group>"; };
+		70A656C42611D12500EC5194 /* ZXLocaleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXLocaleController.swift; sourceTree = "<group>"; };
+		70A656D22611D63A00EC5194 /* i18n.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = i18n.bundle; sourceTree = "<group>"; };
+		70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueEventController.swift; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +106,10 @@
 			children = (
 				7049B1512543E2C100AEAC42 /* AppDelegate.swift */,
 				7049B15A2543E2C800AEAC42 /* Assets.xcassets */,
+				70A656C32611D10900EC5194 /* Classes */,
 				7069B692254C17E900E4DFAD /* Extensions */,
 				7069B697254C182100E4DFAD /* Main */,
+				70A656CF2611D5F100EC5194 /* Resources */,
 				7049B15C2543E2C800AEAC42 /* LaunchScreen.storyboard */,
 				7049B15F2543E2C800AEAC42 /* Info.plist */,
 			);
@@ -118,8 +126,8 @@
 		7069B692254C17E900E4DFAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7069B693254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift */,
-				70BFC88A2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift */,
+				7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */,
+				70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +139,22 @@
 				7049B1552543E2C100AEAC42 /* ViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		70A656C32611D10900EC5194 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				70A656C42611D12500EC5194 /* ZXLocaleController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		70A656CF2611D5F100EC5194 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70A656D22611D63A00EC5194 /* i18n.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70C8306C23AB1DF2005D0C0B = {
@@ -159,33 +183,34 @@
 		70C8307823AB1DF2005D0C0B /* ZXToolboxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				70E9F3F72542DA3400AD7AA6 /* extensions */,
-				70E9F3F82542DA4300AD7AA6 /* sources */,
+				70E9F3F82542DA4300AD7AA6 /* Classes */,
+				70E9F3F72542DA3400AD7AA6 /* Extensions */,
 				70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */,
 				70C8307A23AB1DF2005D0C0B /* Info.plist */,
 			);
 			path = ZXToolboxSwift;
 			sourceTree = "<group>";
 		};
-		70E9F3F72542DA3400AD7AA6 /* extensions */ = {
+		70E9F3F72542DA3400AD7AA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				701017DA23BB548E00F0CF9A /* CAGradientLayer+StartToEnd.swift */,
-				5D01DC2F241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift */,
+				701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */,
+				5D01DC2F241B6F69004989FB /* DispatchQueue+Event.swift */,
 				701017DD23BB548E00F0CF9A /* UIView+Animation.swift */,
 				70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */,
 			);
-			path = extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		70E9F3F82542DA4300AD7AA6 /* sources */ = {
+		70E9F3F82542DA4300AD7AA6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				701017DB23BB548E00F0CF9A /* ZXDashLineView.swift */,
+				70A656B926117C4300EC5194 /* ZXLocale.swift */,
 				701017DC23BB548E00F0CF9A /* ZXTitleBarController.swift */,
 				7001FC2925289DC70080B220 /* ZXURL.swift */,
 			);
-			path = sources;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +309,7 @@
 				7049B15E2543E2C800AEAC42 /* LaunchScreen.storyboard in Resources */,
 				7049B15B2543E2C800AEAC42 /* Assets.xcassets in Resources */,
 				7049B1592543E2C100AEAC42 /* Main.storyboard in Resources */,
+				70A656D32611D63A00EC5194 /* i18n.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +327,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7069B694254C180A00E4DFAD /* CAGradientLayerStartToEndViewController.swift in Sources */,
-				70BFC88B2550FC870098A3CD /* DispatchQueueAsyncAfterEventViewController.swift in Sources */,
+				7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */,
+				70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */,
+				70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */,
 				7049B1562543E2C100AEAC42 /* ViewController.swift in Sources */,
 				7049B1522543E2C100AEAC42 /* AppDelegate.swift in Sources */,
 			);
@@ -312,9 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701017DF23BB548E00F0CF9A /* CAGradientLayer+StartToEnd.swift in Sources */,
+				701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */,
+				70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */,
 				701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */,
-				5D01DC30241B6F69004989FB /* DispatchQueue+AsyncAfterEvent.swift in Sources */,
+				5D01DC30241B6F69004989FB /* DispatchQueue+Event.swift in Sources */,
 				701017E123BB548E00F0CF9A /* ZXTitleBarController.swift in Sources */,
 				701017E023BB548E00F0CF9A /* ZXDashLineView.swift in Sources */,
 				7001FC2C25289DC70080B220 /* ZXURL.swift in Sources */,
