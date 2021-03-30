@@ -37,6 +37,11 @@
                         <segue destination="3Lt-tB-B3x" kind="show" identifier="CAGradientLayer+Direction" id="OeI-4G-7p3"/>
                         <segue destination="yc3-E5-TkS" kind="show" identifier="DispatchQueue+Event" id="Upr-84-eH2"/>
                         <segue destination="2fV-sD-e0p" kind="show" identifier="ZXLocale" id="SF1-fP-zeR"/>
+                        <segue destination="3TH-Zk-KR1" kind="show" identifier="ZXDashLineView" id="ixv-LL-ZuP"/>
+                        <segue destination="sOu-Bb-SDy" kind="show" identifier="ZXTitleBarController" id="0uR-y8-wdV"/>
+                        <segue destination="kyr-c4-KkJ" kind="show" identifier="ZXURL" id="MIg-Ba-Eqs"/>
+                        <segue destination="NTp-ok-j8z" kind="show" identifier="UIView+Animation" id="PZK-YE-8ue"/>
+                        <segue destination="ltr-UM-WBk" kind="show" identifier="UIViewController+Alert" id="qvb-Tn-Ajd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a84-se-sEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -112,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwo-1n-cAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="42"/>
+            <point key="canvasLocation" x="1475" y="287"/>
         </scene>
         <!--Dispatch Queue Event Controller-->
         <scene sceneID="pQZ-Zb-vpZ">
@@ -308,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24Q-Fk-2zF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2250.7246376811595" y="41.517857142857139"/>
+            <point key="canvasLocation" x="2249" y="287"/>
         </scene>
         <!--Locale Controller-->
         <scene sceneID="6xv-P6-oOS">
@@ -368,18 +373,207 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78U-IJ-X2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="1054"/>
+            <point key="canvasLocation" x="1475" y="1159"/>
+        </scene>
+        <!--Dash Line View Controller-->
+        <scene sceneID="mW1-K3-iSz">
+            <objects>
+                <viewController id="3TH-Zk-KR1" customClass="ZXDashLineViewController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7wU-cr-pcv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GVY-RJ-81J"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qff-DV-W9G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgF-ty-xFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2251" y="1159"/>
+        </scene>
+        <!--Title Bar View Controller-->
+        <scene sceneID="GdE-XA-S6n">
+            <objects>
+                <viewController id="sOu-Bb-SDy" customClass="ZXTitleBarViewController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mhz-b2-seD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SuI-kX-TV1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ybc-Ky-8Ib"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dz-3x-ODq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3077" y="1159"/>
+        </scene>
+        <!--URL Controller-->
+        <scene sceneID="BFD-Gg-LNo">
+            <objects>
+                <viewController id="kyr-c4-KkJ" customClass="ZXURLController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D2M-lB-gt3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bQL-xm-ih3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mkw-0j-1EZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KvA-Ab-ksI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3938" y="1158"/>
+        </scene>
+        <!--View Animation Controller-->
+        <scene sceneID="muv-cO-rfm">
+            <objects>
+                <viewController id="NTp-ok-j8z" customClass="UIViewAnimationController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PID-6v-UB9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zSG-xf-cSf">
+                                <rect key="frame" x="20" y="108" width="374" height="577"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xjS-in-yrd">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="Bounce"/>
+                                            <segment title="Fade"/>
+                                            <segment title="Flip"/>
+                                            <segment title="Translation"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UrS-hu-SeA">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="None"/>
+                                            <segment title="Top"/>
+                                            <segment title="Bottom"/>
+                                            <segment title="Left"/>
+                                            <segment title="Right"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-YZ-exI">
+                                        <rect key="frame" x="0.0" y="102" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="From"/>
+                                            <segment title="To"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-Ji-eBY">
+                                        <rect key="frame" x="0.0" y="153" width="374" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlay:" destination="NTp-ok-j8z" eventType="touchUpInside" id="L8s-fY-hv6"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4N-5g-Yl1">
+                                        <rect key="frame" x="0.0" y="203" width="374" height="374"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rdY-sx-MHH">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="t4N-5g-Yl1" secondAttribute="height" multiplier="1:1" id="LqR-zp-cEr"/>
+                                            <constraint firstItem="rdY-sx-MHH" firstAttribute="top" secondItem="t4N-5g-Yl1" secondAttribute="top" id="Y4s-wt-CMX"/>
+                                            <constraint firstItem="rdY-sx-MHH" firstAttribute="leading" secondItem="t4N-5g-Yl1" secondAttribute="leading" id="gOu-Qg-lIm"/>
+                                            <constraint firstAttribute="trailing" secondItem="rdY-sx-MHH" secondAttribute="trailing" id="sBt-rc-yv1"/>
+                                            <constraint firstAttribute="bottom" secondItem="rdY-sx-MHH" secondAttribute="bottom" id="ttG-mY-UEi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XPF-T4-7uM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XPF-T4-7uM" firstAttribute="trailing" secondItem="zSG-xf-cSf" secondAttribute="trailing" constant="20" id="3h0-BY-Bnz"/>
+                            <constraint firstItem="zSG-xf-cSf" firstAttribute="top" secondItem="XPF-T4-7uM" secondAttribute="top" constant="20" id="Zld-UB-DyL"/>
+                            <constraint firstItem="zSG-xf-cSf" firstAttribute="leading" secondItem="XPF-T4-7uM" secondAttribute="leading" constant="20" id="vjF-55-6uD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ki8-M8-W8Q"/>
+                    <connections>
+                        <outlet property="fromtoControl" destination="Bwa-YZ-exI" id="C2x-HE-5ek"/>
+                        <outlet property="imageView" destination="rdY-sx-MHH" id="mLF-b4-UKl"/>
+                        <outlet property="subtypeControl" destination="UrS-hu-SeA" id="RPu-Rs-6ul"/>
+                        <outlet property="typeControl" destination="xjS-in-yrd" id="9ah-Ck-sFo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5S5-EF-DWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3077" y="287"/>
+        </scene>
+        <!--View Controller Alert Controller-->
+        <scene sceneID="hdg-w1-qaR">
+            <objects>
+                <viewController id="ltr-UM-WBk" customClass="UIViewControllerAlertController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1TM-AH-ANT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FKX-Qr-rgA">
+                                <rect key="frame" x="20" y="108" width="374" height="81"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vr4-go-fiD">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                        <segments>
+                                            <segment title="单按钮"/>
+                                            <segment title="双按钮"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAe-J8-iUa">
+                                        <rect key="frame" x="0.0" y="51" width="374" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="呈现">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlay:" destination="ltr-UM-WBk" eventType="touchUpInside" id="HZV-QQ-WwL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9jQ-ag-Azd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FKX-Qr-rgA" firstAttribute="top" secondItem="9jQ-ag-Azd" secondAttribute="top" constant="20" id="5aR-aM-3jW"/>
+                            <constraint firstItem="FKX-Qr-rgA" firstAttribute="leading" secondItem="9jQ-ag-Azd" secondAttribute="leading" constant="20" id="fdW-KV-5Ea"/>
+                            <constraint firstItem="9jQ-ag-Azd" firstAttribute="trailing" secondItem="FKX-Qr-rgA" secondAttribute="trailing" constant="20" id="xX5-jD-SdZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="t6K-At-Hpm"/>
+                    <connections>
+                        <outlet property="typeControl" destination="vr4-go-fiD" id="Kls-dc-UhQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="no5-9T-GJd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3939" y="286"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

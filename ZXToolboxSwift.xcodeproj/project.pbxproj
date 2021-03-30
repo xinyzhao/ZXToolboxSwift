@@ -24,6 +24,11 @@
 		70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656B926117C4300EC5194 /* ZXLocale.swift */; };
 		70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656C42611D12500EC5194 /* ZXLocaleController.swift */; };
 		70A656D32611D63A00EC5194 /* i18n.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70A656D22611D63A00EC5194 /* i18n.bundle */; };
+		70A656D62612CB1B00EC5194 /* ZXDashLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */; };
+		70A656D92612CB3000EC5194 /* ZXTitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */; };
+		70A656DD2612CB6F00EC5194 /* ZXURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656DC2612CB6F00EC5194 /* ZXURLController.swift */; };
+		70A656E02612CB8600EC5194 /* UIViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */; };
+		70A656E32612CB9F00EC5194 /* UIViewControllerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */; };
 		70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
@@ -75,6 +80,11 @@
 		70A656B926117C4300EC5194 /* ZXLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXLocale.swift; sourceTree = "<group>"; };
 		70A656C42611D12500EC5194 /* ZXLocaleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXLocaleController.swift; sourceTree = "<group>"; };
 		70A656D22611D63A00EC5194 /* i18n.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = i18n.bundle; sourceTree = "<group>"; };
+		70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXDashLineViewController.swift; sourceTree = "<group>"; };
+		70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTitleBarViewController.swift; sourceTree = "<group>"; };
+		70A656DC2612CB6F00EC5194 /* ZXURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXURLController.swift; sourceTree = "<group>"; };
+		70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimationController.swift; sourceTree = "<group>"; };
+		70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlertController.swift; sourceTree = "<group>"; };
 		70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueEventController.swift; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
@@ -128,6 +138,8 @@
 			children = (
 				7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */,
 				70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */,
+				70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */,
+				70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,7 +156,10 @@
 		70A656C32611D10900EC5194 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */,
 				70A656C42611D12500EC5194 /* ZXLocaleController.swift */,
+				70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */,
+				70A656DC2612CB6F00EC5194 /* ZXURLController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -327,8 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A656D92612CB3000EC5194 /* ZXTitleBarViewController.swift in Sources */,
+				70A656E32612CB9F00EC5194 /* UIViewControllerAlertController.swift in Sources */,
+				70A656DD2612CB6F00EC5194 /* ZXURLController.swift in Sources */,
+				70A656D62612CB1B00EC5194 /* ZXDashLineViewController.swift in Sources */,
 				7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */,
 				70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */,
+				70A656E02612CB8600EC5194 /* UIViewAnimationController.swift in Sources */,
 				70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */,
 				7049B1562543E2C100AEAC42 /* ViewController.swift in Sources */,
 				7049B1522543E2C100AEAC42 /* AppDelegate.swift in Sources */,
