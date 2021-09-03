@@ -81,6 +81,7 @@ import ZXToolboxSwift
 
 * ZXDashLineView
 * ZXLocale
+* ZXSemaphoreSwift
 * ZXTableViewCellModel
 * ZXTitleBarController
 * ZXURL

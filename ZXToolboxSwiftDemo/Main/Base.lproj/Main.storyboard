@@ -42,6 +42,7 @@
                         <segue destination="kyr-c4-KkJ" kind="show" identifier="ZXURL" id="MIg-Ba-Eqs"/>
                         <segue destination="NTp-ok-j8z" kind="show" identifier="UIView+Animation" id="PZK-YE-8ue"/>
                         <segue destination="ltr-UM-WBk" kind="show" identifier="UIViewController+Alert" id="qvb-Tn-Ajd"/>
+                        <segue destination="PUV-uO-VVp" kind="show" identifier="ZXSemaphoreSwift" id="Fv4-Ry-083"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a84-se-sEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -422,6 +423,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvA-Ab-ksI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3938" y="1158"/>
+        </scene>
+        <!--Semaphore Swift Controller-->
+        <scene sceneID="a1k-up-qWZ">
+            <objects>
+                <viewController storyboardIdentifier="ZXSemaphoreSwiftController" id="PUV-uO-VVp" customClass="ZXSemaphoreSwiftController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ruf-8x-xWz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="h0e-sy-rkl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OIP-Gl-upT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Cn-06-OWd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4787" y="1158"/>
         </scene>
         <!--View Animation Controller-->
         <scene sceneID="muv-cO-rfm">

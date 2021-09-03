@@ -1,17 +1,19 @@
 //
-//  ZXURLController.swift
+//  ZXSemaphoreSwiftController.swift
 //  ZXToolboxSwiftDemo
 //
-//  Created by xyz on 2021/3/30.
+//  Created by xyz on 2021/9/3.
 //  Copyright © 2021 xinyzhao. All rights reserved.
 //
 
 import UIKit
 
-class ZXURLController: UIViewController {
+class ZXSemaphoreSwiftController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
 }

@@ -14,6 +14,7 @@ class ViewController: UITableViewController {
         "Classes": [
             "ZXDashLineView",
             "ZXLocale",
+            "ZXSemaphoreSwift",
             "ZXTitleBarController",
             "ZXURL"
         ],
