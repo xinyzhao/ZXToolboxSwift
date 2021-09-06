@@ -29,7 +29,13 @@ import Foundation
 public class ZXSemaphoreSwift: NSObject {
     /// 信号量计数
     /// - The counting value for the semaphore
-    public var count: Int { _count }
+    public var count: Int {
+        var count: Int = 0
+        let _ = _semaphore_1.wait(timeout: .distantFuture)
+        count = _count
+        _semaphore_1.signal()
+        return count
+    }
     private var _count: Int = 0
     
     /// 等待队列
