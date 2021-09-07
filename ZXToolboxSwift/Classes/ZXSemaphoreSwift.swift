@@ -55,12 +55,31 @@ public class ZXSemaphoreSwift: NSObject {
     
     /// 增加或减少信号量
     /// - Signal (increment or decrement) for the semaphore.
-    /// - Parameter count: The signal value for the semaphore
-    public func signal(_ count: Int) {
+    /// - Parameter count: The signal value for the semaphore.
+    /// - Parameter checkValue: Check value for the semaphore, default is true.
+    public func signal(_ count: Int, checkValue: Bool = true) {
         let _ = _semaphore_1.wait(timeout: .distantFuture)
-        _count += count
-        if _count == 0 {
-            _semaphore_0.signal()
+        var signal = !checkValue
+        if !signal {
+            if _count > 0 {
+                if count > 0 {
+                    signal = true
+                } else if count < 0, _count + count >= 0 {
+                    signal = true
+                }
+            } else if _count < 0 {
+                if count < 0 {
+                    signal = true
+                } else if count > 0, _count + count <= 0 {
+                    signal = true
+                }
+            }
+        }
+        if signal {
+            _count += count
+            if _count == 0 {
+                _semaphore_0.signal()
+            }
         }
         _semaphore_1.signal()
     }
