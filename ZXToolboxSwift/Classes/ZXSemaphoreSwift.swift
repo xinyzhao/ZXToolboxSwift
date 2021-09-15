@@ -85,7 +85,7 @@ public class ZXSemaphoreSwift: NSObject {
     }
     
     /// 等待信号量，直到超时或信号量为0
-    /// - Wait for a semaphore, until timeout or the semaphore is 0 (barrier )
+    /// - Wait for a semaphore, until timeout or the semaphore is 0 (barrier)
     /// - Parameters:
     ///   - timeout: When to timeout (see dispatch_time).
     ///   - queue: The queue for completion handler.

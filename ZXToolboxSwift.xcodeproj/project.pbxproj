@@ -35,6 +35,7 @@
 		70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
+		70F9E19A26F1EFC4008BC705 /* ZXTableViewCellModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTableViewCellModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */,
 				70A656C42611D12500EC5194 /* ZXLocaleController.swift */,
 				70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */,
+				70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */,
 				70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */,
 				70A656DC2612CB6F00EC5194 /* ZXURLController.swift */,
 			);
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70B276E526E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift in Sources */,
+				70F9E19A26F1EFC4008BC705 /* ZXTableViewCellModelController.swift in Sources */,
 				70A656D92612CB3000EC5194 /* ZXTitleBarViewController.swift in Sources */,
 				70A656E32612CB9F00EC5194 /* UIViewControllerAlertController.swift in Sources */,
 				70A656DD2612CB6F00EC5194 /* ZXURLController.swift in Sources */,
