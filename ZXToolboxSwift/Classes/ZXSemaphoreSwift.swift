@@ -62,15 +62,11 @@ public class ZXSemaphoreSwift: NSObject {
         var signal = !checkValue
         if !signal {
             if _count > 0 {
-                if count > 0 {
-                    signal = true
-                } else if count < 0, _count + count >= 0 {
+                if count < 0, _count + count >= 0 {
                     signal = true
                 }
             } else if _count < 0 {
-                if count < 0 {
-                    signal = true
-                } else if count > 0, _count + count <= 0 {
+                if count > 0, _count + count <= 0 {
                     signal = true
                 }
             }
