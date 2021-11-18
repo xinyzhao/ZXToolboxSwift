@@ -25,74 +25,69 @@
 
 import UIKit
 
-public class ZXTableViewCellBundle: NSObject {
-    public enum Source: String, CaseIterable {
-        case className
-        case identifier
-        case path
-        case url
-    }
+/// 通过类名或 Nib 创建 Cell
+open class ZXTableViewCellModel: NSObject {
+    /// 标识符
+    open var identifier: String?
     
-    public var source: Source?
-    public var value: String?
+    /// 类型 Module，不指定则默认使用 `CFBundleName`
+    open var classModule: String?
+    /// 通过类名创建 Cell
+    open var className: String?
     
-    public override init() {
-        super.init()
-    }
+    /// 指定 `Nib` 所在的 `Bundle` 名称，不指定则默认使用 `Bundle.main`
+    open var nibBundle: String?
+    /// 通过 Nib 创建 Cell
+    open var nibName: String?
     
-    public init(_ source: Source, value: String) {
-        super.init()
-        self.source = source
-        self.value = value
-    }
+    /// 用户信息
+    open var userInfo: Any?
     
-    public var bundle: Bundle {
-        var bundle: Bundle?
-        if let source = source, let value = value {
-            switch source {
-            case .className:
-                if let cls = NSClassFromString(value) {
-                    bundle = Bundle(for: cls)
-                }
-            case .identifier:
-                bundle = Bundle(identifier: value)
-            case .path:
-                bundle = Bundle(path: value)
-            case .url:
-                if let url = URL(string: value) {
-                    bundle = Bundle(url: url)
-                } else {
-                    bundle = Bundle(path: value)
-                }
-            }
-        }
-        return bundle ?? Bundle.main
-    }
-}
-
-public class ZXTableViewCellModel: NSObject {
-    public var identifier: String?
-    
-    public var classModule: String?
-    public var className: String?
-    
-    public var nibBundle = ZXTableViewCellBundle()
-    public var nibName: String?
-    
-    public var data: Any?
-    
-    public init(_ identifier: String, data: Any?) {
+    /// 初始化
+    /// - Parameters:
+    ///   - identifier: 标识符
+    ///   - data: 用户信息
+    public init(_ identifier: String, userInfo: Any?) {
         super.init()
         self.identifier = identifier
-        self.data = data
+        self.userInfo = userInfo
     }
+    
+    /// 注册 Cell
+    /// - Parameter tableView: UITableView
+    /// - Returns: 成功为true，否则为false
+    open func registerCell(_ tableView: UITableView) -> Bool {
+        guard let id = identifier else { return false }
+        if let nib = loadNib() {
+            tableView.register(nib, forCellReuseIdentifier: id)
+            return true
+        }
+        if let aClass = getClass() {
+            tableView.register(aClass, forCellReuseIdentifier: id)
+            return true
+        }
+        return false
+    }
+    
+    open func reusableCell(_ tableView: UITableView, with identifier: String, for indexPath: IndexPath? = nil) -> UITableViewCell? {
+            if let indexPath = indexPath {
+                return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+            }
+            return tableView.dequeueReusableCell(withIdentifier: identifier)
+        }
 }
 
-public class ZXTableViewCellModels: NSObject {
-    public lazy var cellModels = [String:ZXTableViewCellModel]()
+extension ZXTableViewCellModel {
+    private func getClass() -> AnyClass? {
+        if let name = className {
+            let module = getModule()
+            return NSClassFromString(module + "." + name)
+        }
+        return nil
+    }
     
-    private func classModule(for identifier: String) -> String {
-        if let module = cellModels[identifier]?.classModule {
+    private func getModule() -> String {
+        if let module = classModule {
             return module
         }
         if let module = Bundle.main.infoDictionary?["CFBundleName"] as? String {
@@ -101,47 +96,25 @@ public class ZXTableViewCellModels: NSObject {
         return ""
     }
     
-    private func className(for identifier: String) -> String? {
-        return cellModels[identifier]?.className ?? nil
-    }
-    
-    private func nibBundle(for identifier: String) -> Bundle? {
-        if let bundle = cellModels[identifier]?.nibBundle {
-            return bundle.bundle
+    private func loadNib() -> UINib? {
+        if let name = nibName,
+           let bundle = getBundle(),
+           let _ = bundle.loadNibNamed(name, owner: nil, options: nil) {
+            return UINib(nibName: name, bundle: bundle)
         }
         return nil
     }
     
-    private func nibName(for identifier: String) -> String? {
-        return cellModels[identifier]?.nibName ?? nil
-    }
-    
-    private func loadNib(with identifier: String, bundle: Bundle? = Bundle.main) -> UINib? {
-        if let nibName = nibName(for: identifier),
-           let bundle = bundle,
-           let _ = bundle.loadNibNamed(nibName, owner: nil, options: nil) {
-            return UINib(nibName: nibName, bundle: bundle)
-        }
-        return nil
-    }
-    
-    public func registerCells(for tableView: UITableView) {
-        for (key, _) in cellModels {
-            if let nib = loadNib(with: key) {
-                tableView.register(nib, forCellReuseIdentifier: key)
-            } else if let className = className(for: key) {
-                let module = classModule(for: key)
-                if let aClass = NSClassFromString(module + "." + className) {
-                    tableView.register(aClass, forCellReuseIdentifier: key)
-                }
+    private func getBundle() -> Bundle? {
+        if let name = nibBundle {
+            var type: String? = ".bundle"
+            if name.hasSuffix(".bundle") {
+                type = nil
+            }
+            if let path = Bundle.main.path(forResource: name, ofType: type) {
+                return Bundle(path: path)
             }
         }
-    }
-    
-    public func dequeueReusableCell(with identifier: String, for indexPath: IndexPath? = nil, tableView: UITableView) -> UITableViewCell? {
-        if let indexPath = indexPath {
-            return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        }
-        return tableView.dequeueReusableCell(withIdentifier: identifier)
+        return nil
     }
 }
