@@ -69,6 +69,12 @@ open class ZXTableViewCellModel: NSObject {
         return false
     }
     
+    /// Returns a reusable table-view cell object for the specified reuse identifier and adds it to the table.
+    /// - Parameters:
+    ///   - tableView: The tableview
+    ///   - identifier: A string identifying the cell object to be reused. This parameter must not be nil.
+    ///   - indexPath: The index path specifying the location of the cell.
+    /// - Returns: The tableview cell
     open func reusableCell(_ tableView: UITableView, with identifier: String, for indexPath: IndexPath? = nil) -> UITableViewCell? {
             if let indexPath = indexPath {
                 return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
