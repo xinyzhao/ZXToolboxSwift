@@ -31,17 +31,17 @@ import Foundation
 public func ZXURL(scheme: String? = nil, user: String? = nil, password: String? = nil, host: String, port: Int? = nil, path: String? = nil, query: Any? = nil, fragment: String? = nil, encoding: Bool = false) -> URL? {
     var url = String()
     // scheme
-    if let scheme = scheme {
+    if let scheme = scheme, !scheme.isEmpty {
         url += scheme + "://"
     }
     // user
-    if var user = user {
+    if var user = user, !user.isEmpty {
         if encoding {
             user = user.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlUserAllowed) ?? user
         }
         url += user
         // password
-        if var password = password {
+        if var password = password, !password.isEmpty {
             if encoding {
                 password = password.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPasswordAllowed) ?? password
             }
@@ -63,7 +63,7 @@ public func ZXURL(scheme: String? = nil, user: String? = nil, password: String? 
     }
     // path
     url += "/"
-    if var path = path {
+    if var path = path, !path.isEmpty {
         if encoding {
             path = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlPathAllowed) ?? path
         }
@@ -91,7 +91,7 @@ public func ZXURL(scheme: String? = nil, user: String? = nil, password: String? 
         url += "?" + pairs.joined(separator: "&")
     }
     // fragment
-    if let f = fragment {
+    if let f = fragment, !f.isEmpty {
         if encoding {
             url += "#" + (f.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed) ?? f)
         } else {
