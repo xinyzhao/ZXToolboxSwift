@@ -40,17 +40,49 @@ open class ZXTableViewCellModel: NSObject {
     /// 通过 Nib 创建 Cell
     open var nibName: String?
     
-    /// 用户信息
-    open var userInfo: Any?
+    /// 用户数据
+    open var userData: Any?
     
     /// 初始化
     /// - Parameters:
     ///   - identifier: 标识符
-    ///   - data: 用户信息
-    public init(_ identifier: String, userInfo: Any?) {
+    ///   - data: 用户数据
+    public init(_ identifier: String, userData: Any? = nil) {
         super.init()
         self.identifier = identifier
-        self.userInfo = userInfo
+        self.userData = userData
+    }
+    
+    /// 初始化
+    /// - Parameters:
+    ///   - identifier: 标识符
+    ///   - classModule: 类型 Module，不指定则默认使用 `CFBundleName`
+    ///   - className: 类名
+    ///   - userData: 用户数据
+    public init(_ identifier: String, classModule: String? = nil, className: String? = nil, userData: Any? = nil) {
+        super.init()
+        self.identifier = identifier
+        self.classModule = classModule
+        self.className = className
+        self.userData = userData
+    }
+    
+    /// 初始化
+    /// - Parameters:
+    ///   - identifier: 标识符
+    ///   - classModule: 类型 Module，不指定则默认使用 `CFBundleName`
+    ///   - className: 类名
+    ///   - nibBundle: Bundle 名称
+    ///   - nibName: Nib 名称
+    ///   - userData: 用户数据
+    public init(_ identifier: String, classModule: String? = nil, className: String? = nil, nibBundle: String? = nil, nibName: String? = nil, userData: Any? = nil) {
+        super.init()
+        self.identifier = identifier
+        self.classModule = classModule
+        self.className = className
+        self.nibBundle = nibBundle
+        self.nibName = nibName
+        self.userData = userData
     }
     
     /// 注册 Cell
@@ -62,8 +94,8 @@ open class ZXTableViewCellModel: NSObject {
             tableView.register(nib, forCellReuseIdentifier: id)
             return true
         }
-        if let aClass = getClass() {
-            tableView.register(aClass, forCellReuseIdentifier: id)
+        if let cls = loadClass() {
+            tableView.register(cls, forCellReuseIdentifier: id)
             return true
         }
         return false
@@ -72,27 +104,41 @@ open class ZXTableViewCellModel: NSObject {
     /// Returns a reusable table-view cell object for the specified reuse identifier and adds it to the table.
     /// - Parameters:
     ///   - tableView: The tableview
-    ///   - identifier: A string identifying the cell object to be reused. This parameter must not be nil.
     ///   - indexPath: The index path specifying the location of the cell.
     /// - Returns: The tableview cell
-    open func reusableCell(_ tableView: UITableView, with identifier: String, for indexPath: IndexPath? = nil) -> UITableViewCell? {
-            if let indexPath = indexPath {
-                return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-            }
-            return tableView.dequeueReusableCell(withIdentifier: identifier)
+    open func reusableCell(_ tableView: UITableView, for indexPath: IndexPath? = nil) -> UITableViewCell? {
+        guard let identifier = identifier else { return nil }
+        if let indexPath = indexPath {
+            return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         }
+        return tableView.dequeueReusableCell(withIdentifier: identifier)
+    }
 }
 
 extension ZXTableViewCellModel {
-    private func getClass() -> AnyClass? {
+    private func loadBundle() -> Bundle {
+        if let name = nibBundle {
+            var type: String? = ".bundle"
+            if name.hasSuffix(".bundle") {
+                type = nil
+            }
+            if let path = Bundle.main.path(forResource: name, ofType: type),
+               let bundle = Bundle(path: path) {
+                return bundle
+            }
+        }
+        return Bundle.main
+    }
+    
+    private func loadClass() -> AnyClass? {
         if let name = className {
-            let module = getModule()
+            let module = loadModule()
             return NSClassFromString(module + "." + name)
         }
         return nil
     }
     
-    private func getModule() -> String {
+    private func loadModule() -> String {
         if let module = classModule {
             return module
         }
@@ -103,23 +149,10 @@ extension ZXTableViewCellModel {
     }
     
     private func loadNib() -> UINib? {
+        let bundle = loadBundle()
         if let name = nibName,
-           let bundle = getBundle(),
            let _ = bundle.loadNibNamed(name, owner: nil, options: nil) {
             return UINib(nibName: name, bundle: bundle)
-        }
-        return nil
-    }
-    
-    private func getBundle() -> Bundle? {
-        if let name = nibBundle {
-            var type: String? = ".bundle"
-            if name.hasSuffix(".bundle") {
-                type = nil
-            }
-            if let path = Bundle.main.path(forResource: name, ofType: type) {
-                return Bundle(path: path)
-            }
         }
         return nil
     }

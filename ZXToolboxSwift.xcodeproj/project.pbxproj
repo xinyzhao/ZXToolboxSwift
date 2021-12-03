@@ -36,6 +36,10 @@
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
 		70F9E19A26F1EFC4008BC705 /* ZXTableViewCellModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */; };
+		70FC42F12758DFD000E056DC /* ZXTableViewCell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FC42F02758DFD000E056DC /* ZXTableViewCell.plist */; };
+		70FC42F62758E03000E056DC /* ZXTableViewCellNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC42F42758E03000E056DC /* ZXTableViewCellNib.swift */; };
+		70FC42F72758E03000E056DC /* ZXTableViewCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FC42F52758E03000E056DC /* ZXTableViewCellNib.xib */; };
+		70FC42FB2758E04500E056DC /* ZXTableViewCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC42FA2758E04500E056DC /* ZXTableViewCellClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,10 @@
 		70C8307A23AB1DF2005D0C0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTableViewCellModelController.swift; sourceTree = "<group>"; };
+		70FC42F02758DFD000E056DC /* ZXTableViewCell.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ZXTableViewCell.plist; sourceTree = "<group>"; };
+		70FC42F42758E03000E056DC /* ZXTableViewCellNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTableViewCellNib.swift; sourceTree = "<group>"; };
+		70FC42F52758E03000E056DC /* ZXTableViewCellNib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZXTableViewCellNib.xib; sourceTree = "<group>"; };
+		70FC42FA2758E04500E056DC /* ZXTableViewCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTableViewCellClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,7 @@
 				70A656C42611D12500EC5194 /* ZXLocaleController.swift */,
 				70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */,
 				70F9E19926F1EFC4008BC705 /* ZXTableViewCellModelController.swift */,
+				70FC42F32758DFEA00E056DC /* ZXTableViewCell */,
 				70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */,
 				70A656DC2612CB6F00EC5194 /* ZXURLController.swift */,
 			);
@@ -238,6 +247,17 @@
 				7001FC2925289DC70080B220 /* ZXURL.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		70FC42F32758DFEA00E056DC /* ZXTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				70FC42F02758DFD000E056DC /* ZXTableViewCell.plist */,
+				70FC42FA2758E04500E056DC /* ZXTableViewCellClass.swift */,
+				70FC42F42758E03000E056DC /* ZXTableViewCellNib.swift */,
+				70FC42F52758E03000E056DC /* ZXTableViewCellNib.xib */,
+			);
+			path = ZXTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +356,9 @@
 				7049B15E2543E2C800AEAC42 /* LaunchScreen.storyboard in Resources */,
 				7049B15B2543E2C800AEAC42 /* Assets.xcassets in Resources */,
 				7049B1592543E2C100AEAC42 /* Main.storyboard in Resources */,
+				70FC42F72758E03000E056DC /* ZXTableViewCellNib.xib in Resources */,
 				70A656D32611D63A00EC5194 /* i18n.bundle in Resources */,
+				70FC42F12758DFD000E056DC /* ZXTableViewCell.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +376,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FC42F62758E03000E056DC /* ZXTableViewCellNib.swift in Sources */,
 				70B276E526E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift in Sources */,
 				70F9E19A26F1EFC4008BC705 /* ZXTableViewCellModelController.swift in Sources */,
 				70A656D92612CB3000EC5194 /* ZXTitleBarViewController.swift in Sources */,
 				70A656E32612CB9F00EC5194 /* UIViewControllerAlertController.swift in Sources */,
 				70A656DD2612CB6F00EC5194 /* ZXURLController.swift in Sources */,
+				70FC42FB2758E04500E056DC /* ZXTableViewCellClass.swift in Sources */,
 				70A656D62612CB1B00EC5194 /* ZXDashLineViewController.swift in Sources */,
 				7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */,
 				70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */,
