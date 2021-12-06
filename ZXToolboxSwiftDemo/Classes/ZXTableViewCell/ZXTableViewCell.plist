@@ -11,8 +11,6 @@
 	<dict>
 		<key>identifier</key>
 		<string>Nib</string>
-		<key>className</key>
-		<string>ZXTableViewCellNib</string>
 		<key>nibName</key>
 		<string>ZXTableViewCellNib</string>
 	</dict>
