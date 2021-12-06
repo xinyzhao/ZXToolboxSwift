@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
         "Extensions": [
             "CAGradientLayer+Direction",
             "DispatchQueue+Event",
-            "UIView+Animation",
+            "UIView+HiddenAnimated",
             "UIViewController+Alert"
         ]
     ]

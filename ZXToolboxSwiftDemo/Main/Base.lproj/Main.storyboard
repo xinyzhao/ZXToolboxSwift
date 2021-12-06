@@ -40,7 +40,7 @@
                         <segue destination="3TH-Zk-KR1" kind="show" identifier="ZXDashLineView" id="ixv-LL-ZuP"/>
                         <segue destination="sOu-Bb-SDy" kind="show" identifier="ZXTitleBarController" id="0uR-y8-wdV"/>
                         <segue destination="kyr-c4-KkJ" kind="show" identifier="ZXURL" id="MIg-Ba-Eqs"/>
-                        <segue destination="NTp-ok-j8z" kind="show" identifier="UIView+Animation" id="PZK-YE-8ue"/>
+                        <segue destination="NTp-ok-j8z" kind="show" identifier="UIView+HiddenAnimated" id="PZK-YE-8ue"/>
                         <segue destination="ltr-UM-WBk" kind="show" identifier="UIViewController+Alert" id="qvb-Tn-Ajd"/>
                         <segue destination="PUV-uO-VVp" kind="show" identifier="ZXSemaphoreSwift" id="Fv4-Ry-083"/>
                         <segue destination="4ya-u8-FMj" kind="show" identifier="ZXTableViewCellModel" id="gZd-iR-MYj"/>
@@ -1055,10 +1055,10 @@
             </objects>
             <point key="canvasLocation" x="4786.9565217391309" y="1157.8125"/>
         </scene>
-        <!--View Animation Controller-->
+        <!--View Hidden Animated Controller-->
         <scene sceneID="muv-cO-rfm">
             <objects>
-                <viewController id="NTp-ok-j8z" customClass="UIViewAnimationController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NTp-ok-j8z" customClass="UIViewHiddenAnimatedController" customModule="ZXToolboxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PID-6v-UB9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1069,9 +1069,9 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xjS-in-yrd">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
                                         <segments>
-                                            <segment title="Bounce"/>
                                             <segment title="Fade"/>
                                             <segment title="Flip"/>
+                                            <segment title="Scale"/>
                                             <segment title="Translation"/>
                                         </segments>
                                     </segmentedControl>
@@ -1088,8 +1088,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bwa-YZ-exI">
                                         <rect key="frame" x="0.0" y="102" width="374" height="32"/>
                                         <segments>
-                                            <segment title="From"/>
-                                            <segment title="To"/>
+                                            <segment title="Show"/>
+                                            <segment title="Hide"/>
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-Ji-eBY">
@@ -1132,10 +1132,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="ki8-M8-W8Q"/>
                     <connections>
-                        <outlet property="fromtoControl" destination="Bwa-YZ-exI" id="C2x-HE-5ek"/>
+                        <outlet property="animationControl" destination="xjS-in-yrd" id="1Vv-DK-S7a"/>
+                        <outlet property="directionControl" destination="UrS-hu-SeA" id="GRQ-GH-Je6"/>
+                        <outlet property="hiddenControl" destination="Bwa-YZ-exI" id="j6Y-ne-lY8"/>
                         <outlet property="imageView" destination="rdY-sx-MHH" id="mLF-b4-UKl"/>
-                        <outlet property="subtypeControl" destination="UrS-hu-SeA" id="RPu-Rs-6ul"/>
-                        <outlet property="typeControl" destination="xjS-in-yrd" id="9ah-Ck-sFo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5S5-EF-DWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

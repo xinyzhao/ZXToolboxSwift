@@ -1,5 +1,5 @@
 //
-// UIView+Animation.swift
+// UIView+HiddenAnimated.swift
 // https://github.com/xinyzhao/ZXToolboxSwift
 //
 // Copyright (c) 2019-2020 Zhao Xin
@@ -36,14 +36,14 @@ public extension UIView {
     
     /// 动画类型
     enum AnimationType {
-        case bounce // 弹跳效果
         case fade // 渐显/渐隐
         case flip // 180度翻转
+        case scale // 缩放
         case translation // 平移
     }
     
     /// 动画子类型
-    enum AnimationSubtype {
+    enum AnimationDirection {
         case none
         case top
         case bottom
@@ -51,34 +51,38 @@ public extension UIView {
         case right
     }
     
-    /// 显示view
+    /// 动画显示/隐藏 view
     /// - Parameters:
-    ///   - from: 动画类型
-    ///   - duration: 动画时间
-    func animate(_ type: AnimationType, from: AnimationSubtype,
-                 duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
+    ///   - hidden: 显示/隐藏
+    ///   - animation: 动画类型，AnimationType
+    ///   - direction: 动画方向，默认为 .none，特定的动画类型需要指定方向
+    ///   - duration: 动画时间，默认 0.3秒
+    ///   - completion: 动画完成时调用
+    func setHidden(_ hidden: Bool,
+                   animation: AnimationType,
+                   direction: AnimationDirection = .none,
+                   duration: TimeInterval = 0.3,
+                   completion: ((_ finished: Bool) -> Void)? = nil) {
+        if hidden {
+            hideViewAnimated(animation, direction: direction, duration: duration, completion: completion)
+        } else {
+            showViewAnimated(animation, direction: direction, duration: duration, completion: completion)
+        }
+    }
+    
+    /// 动画显示view
+    /// - Parameters:
+    ///   - animation: 动画类型
+    ///   - direction: 动画方向，默认为 .none，特定的动画类型需要指定方向
+    ///   - duration: 动画时间，默认 0.3秒
+    ///   - completion: 完成回调
+    func showViewAnimated(_ animation: AnimationType,
+                          direction: AnimationDirection = .none,
+                          duration: TimeInterval = 0.3,
+                          completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         view.layer.removeAllAnimations()
-        switch type {
-        case .bounce:
-            view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            view.isHidden = false
-            UIView.animateKeyframes(withDuration: duration, delay: 0, options: .calculationModeCubic, animations: {
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
-                    view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-                }
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-                    view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                }
-            }) { (finished) in
-                if finished {
-                    view.transform = CGAffineTransform.identity
-                }
-                if let closure = completion {
-                    closure(finished)
-                }
-            }
-            break
+        switch animation {
         case .fade:
             view.alpha = 0.0
             view.isHidden = false
@@ -94,12 +98,11 @@ public extension UIView {
             }
             break
         case .flip:
-            view.alpha = 1.0
             view.isHidden = false
             //
             var angle: CGFloat
             var point: CGPoint = .zero
-            switch from {
+            switch direction {
             case .top:
                 angle = -CGFloat.pi / 2
                 point.x = 1
@@ -129,9 +132,26 @@ public extension UIView {
             }
             //
             break
+        case .scale:
+            view.alpha = 0.0
+            view.isHidden = false
+            view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            UIView.animate(withDuration: duration, animations: {
+                view.alpha = 1.0
+                view.transform = CGAffineTransform.identity
+            }) { (finished) in
+                if finished {
+                    view.alpha = 1.0
+                    view.transform = CGAffineTransform.identity
+                }
+                if let closure = completion {
+                    closure(finished)
+                }
+            }
+            break
         case .translation:
             var transform = view.transform
-            switch from {
+            switch direction {
             case .top:
                 transform = CGAffineTransform(translationX: 0, y: -view.frame.height)
                 break
@@ -163,49 +183,38 @@ public extension UIView {
         }
     }
 
-    /// 隐藏view
+    /// 动画隐藏view
     /// - Parameters:
-    ///   - from: 动画类型
-    ///   - duration: 动画时间
-    func animate(_ type: AnimationType, to: AnimationSubtype,
-                 duration: TimeInterval = 0.3, completion: ((_ finished: Bool) -> Void)? = nil) {
+    ///   - animation: 动画类型
+    ///   - direction: 动画方向，默认为 .none，特定的动画类型需要指定方向
+    ///   - duration: 动画时间，默认 0.3秒
+    ///   - completion: 动画回调
+    func hideViewAnimated(_ animation: AnimationType,
+                  direction: AnimationDirection = .none,
+                  duration: TimeInterval = 0.3,
+                  completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         if view.isHidden, view.alpha <= 0.0 {
             return
         }
         view.layer.removeAllAnimations()
-        switch type {
-        case .bounce:
-            UIView.animateKeyframes(withDuration: duration, delay: 0, options: .calculationModeCubic, animations: {
-                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
-                    view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-                }
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-                    view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                }
-            }) { (finished) in
-                if let closure = completion {
-                    closure(finished)
-                } else if finished {
-                    view.isHidden = true
-                }
-            }
-            break
+        switch animation {
         case .fade:
             UIView.animate(withDuration: duration, animations: {
                 view.alpha = 0.0
             }) { (finished) in
+                if finished {
+                    view.isHidden = true
+                }
                 if let closure = completion {
                     closure(finished)
-                } else if finished {
-                    view.isHidden = true
                 }
             }
             break
         case .flip:
             var angle: CGFloat
             var point: CGPoint = .zero
-            switch to {
+            switch direction {
             case .top:
                 angle = CGFloat.pi / 2
                 point.x = 1
@@ -230,14 +239,32 @@ public extension UIView {
             anim.duration = duration
             anim.isRemovedOnCompletion = false
             if let delegate = animationDelegate {
-                delegate.didCompletion = completion
+                delegate.didCompletion = { [weak view] (finished) in
+                    if finished {
+                        view?.isHidden = true
+                    }
+                    completion?(finished)
+                }
                 delegate.add(anim, forKey: .transformFlip)
             }
             //
             break
+        case .scale:
+            UIView.animate(withDuration: duration, animations: {
+                view.alpha = 0.0
+                view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }) { (finished) in
+                if finished {
+                    view.isHidden = true
+                }
+                if let closure = completion {
+                    closure(finished)
+                }
+            }
+            break
         case .translation:
             var transform = view.transform
-            switch to {
+            switch direction {
             case .top:
                 transform = CGAffineTransform(translationX: 0, y: -view.frame.height)
                 break
@@ -256,10 +283,11 @@ public extension UIView {
             UIView.animate(withDuration: duration, animations: {
                 view.transform = transform
             }) { (finished) in
+                if finished {
+                    view.isHidden = true
+                }
                 if let closure = completion {
                     closure(finished)
-                } else if finished {
-                    view.isHidden = true
                 }
             }
             break

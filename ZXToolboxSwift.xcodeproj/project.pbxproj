@@ -12,7 +12,7 @@
 		701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */; };
 		701017E023BB548E00F0CF9A /* ZXDashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DB23BB548E00F0CF9A /* ZXDashLineView.swift */; };
 		701017E123BB548E00F0CF9A /* ZXTitleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DC23BB548E00F0CF9A /* ZXTitleBarController.swift */; };
-		701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DD23BB548E00F0CF9A /* UIView+Animation.swift */; };
+		701017E223BB548E00F0CF9A /* UIView+HiddenAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701017DD23BB548E00F0CF9A /* UIView+HiddenAnimated.swift */; };
 		7049B1522543E2C100AEAC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049B1512543E2C100AEAC42 /* AppDelegate.swift */; };
 		7049B1562543E2C100AEAC42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7049B1552543E2C100AEAC42 /* ViewController.swift */; };
 		7049B1592543E2C100AEAC42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7049B1572543E2C100AEAC42 /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 		70A656D62612CB1B00EC5194 /* ZXDashLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */; };
 		70A656D92612CB3000EC5194 /* ZXTitleBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */; };
 		70A656DD2612CB6F00EC5194 /* ZXURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656DC2612CB6F00EC5194 /* ZXURLController.swift */; };
-		70A656E02612CB8600EC5194 /* UIViewAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */; };
+		70A656E02612CB8600EC5194 /* UIViewHiddenAnimatedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656DF2612CB8600EC5194 /* UIViewHiddenAnimatedController.swift */; };
 		70A656E32612CB9F00EC5194 /* UIViewControllerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */; };
 		70B276E226E20F6C00C4E63A /* ZXSemaphoreSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B276E126E20F6C00C4E63A /* ZXSemaphoreSwift.swift */; };
 		70B276E526E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */; };
@@ -75,7 +75,7 @@
 		701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Direction.swift"; sourceTree = "<group>"; };
 		701017DB23BB548E00F0CF9A /* ZXDashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXDashLineView.swift; sourceTree = "<group>"; };
 		701017DC23BB548E00F0CF9A /* ZXTitleBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXTitleBarController.swift; sourceTree = "<group>"; };
-		701017DD23BB548E00F0CF9A /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		701017DD23BB548E00F0CF9A /* UIView+HiddenAnimated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HiddenAnimated.swift"; sourceTree = "<group>"; };
 		702F4AC92521B93300A2BE6E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		7049B14F2543E2C100AEAC42 /* ZXToolboxSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXToolboxSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7049B1512543E2C100AEAC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		70A656D52612CB1B00EC5194 /* ZXDashLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXDashLineViewController.swift; sourceTree = "<group>"; };
 		70A656D82612CB3000EC5194 /* ZXTitleBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTitleBarViewController.swift; sourceTree = "<group>"; };
 		70A656DC2612CB6F00EC5194 /* ZXURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXURLController.swift; sourceTree = "<group>"; };
-		70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAnimationController.swift; sourceTree = "<group>"; };
+		70A656DF2612CB8600EC5194 /* UIViewHiddenAnimatedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHiddenAnimatedController.swift; sourceTree = "<group>"; };
 		70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAlertController.swift; sourceTree = "<group>"; };
 		70B276E126E20F6C00C4E63A /* ZXSemaphoreSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXSemaphoreSwift.swift; sourceTree = "<group>"; };
 		70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXSemaphoreSwiftController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 			children = (
 				7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */,
 				70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */,
-				70A656DF2612CB8600EC5194 /* UIViewAnimationController.swift */,
+				70A656DF2612CB8600EC5194 /* UIViewHiddenAnimatedController.swift */,
 				70A656E22612CB9F00EC5194 /* UIViewControllerAlertController.swift */,
 			);
 			path = Extensions;
@@ -230,7 +230,7 @@
 			children = (
 				701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */,
 				5D01DC2F241B6F69004989FB /* DispatchQueue+Event.swift */,
-				701017DD23BB548E00F0CF9A /* UIView+Animation.swift */,
+				701017DD23BB548E00F0CF9A /* UIView+HiddenAnimated.swift */,
 				70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
@@ -386,7 +386,7 @@
 				70A656D62612CB1B00EC5194 /* ZXDashLineViewController.swift in Sources */,
 				7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */,
 				70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */,
-				70A656E02612CB8600EC5194 /* UIViewAnimationController.swift in Sources */,
+				70A656E02612CB8600EC5194 /* UIViewHiddenAnimatedController.swift in Sources */,
 				70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */,
 				7049B1562543E2C100AEAC42 /* ViewController.swift in Sources */,
 				7049B1522543E2C100AEAC42 /* AppDelegate.swift in Sources */,
@@ -400,7 +400,7 @@
 				701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */,
 				70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */,
 				70B276E226E20F6C00C4E63A /* ZXSemaphoreSwift.swift in Sources */,
-				701017E223BB548E00F0CF9A /* UIView+Animation.swift in Sources */,
+				701017E223BB548E00F0CF9A /* UIView+HiddenAnimated.swift in Sources */,
 				5D01DC30241B6F69004989FB /* DispatchQueue+Event.swift in Sources */,
 				701017E123BB548E00F0CF9A /* ZXTitleBarController.swift in Sources */,
 				70B9BF2D267C99B000869E90 /* ZXTableViewCellModel.swift in Sources */,
