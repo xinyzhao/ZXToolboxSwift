@@ -16,14 +16,16 @@ class UIViewHiddenAnimatedController: UIViewController {
 
     @IBAction func onPlay(_ sender: Any?) {
         // Animation
-        var type: UIView.AnimationType = .fade
+        var ani: UIView.AnimationType = .none
         switch animationControl.selectedSegmentIndex {
         case 1:
-            type = .flip
+            ani = .fade
         case 2:
-            type = .scale
+            ani = .flip
         case 3:
-            type = .translation
+            ani = .scale
+        case 4:
+            ani = .translation
         default:
             break
         }
@@ -43,11 +45,11 @@ class UIViewHiddenAnimatedController: UIViewController {
         }
         // Hidden or not
         if hiddenControl.selectedSegmentIndex == 0 {
-            imageView.showViewAnimated(type, direction: dir) { [weak self] _ in
+            imageView.setHidden(false, animation: ani, direction: dir) { [weak self] _ in
                 self?.hiddenControl.selectedSegmentIndex = 1
             }
         } else {
-            imageView.hideViewAnimated(type, direction: dir) { [weak self] _ in
+            imageView.setHidden(true, animation: ani, direction: dir) { [weak self] _ in
                 self?.hiddenControl.selectedSegmentIndex = 0
             }
         }

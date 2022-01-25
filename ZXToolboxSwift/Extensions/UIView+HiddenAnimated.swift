@@ -36,6 +36,7 @@ public extension UIView {
     
     /// 动画类型
     enum AnimationType {
+        case none // 不做动画
         case fade // 渐显/渐隐
         case flip // 180度翻转
         case scale // 缩放
@@ -64,9 +65,9 @@ public extension UIView {
                    duration: TimeInterval = 0.3,
                    completion: ((_ finished: Bool) -> Void)? = nil) {
         if hidden {
-            hideViewAnimated(animation, direction: direction, duration: duration, completion: completion)
+            hide(with: animation, direction: direction, duration: duration, completion: completion)
         } else {
-            showViewAnimated(animation, direction: direction, duration: duration, completion: completion)
+            show(with: animation, direction: direction, duration: duration, completion: completion)
         }
     }
     
@@ -76,13 +77,17 @@ public extension UIView {
     ///   - direction: 动画方向，默认为 .none，特定的动画类型需要指定方向
     ///   - duration: 动画时间，默认 0.3秒
     ///   - completion: 完成回调
-    func showViewAnimated(_ animation: AnimationType,
-                          direction: AnimationDirection = .none,
-                          duration: TimeInterval = 0.3,
-                          completion: ((_ finished: Bool) -> Void)? = nil) {
+    func show(with animation: AnimationType,
+              direction: AnimationDirection = .none,
+              duration: TimeInterval = 0.3,
+              completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         view.layer.removeAllAnimations()
         switch animation {
+        case .none:
+            view.isHidden = false
+            completion?(true)
+            break
         case .fade:
             view.alpha = 0.0
             view.isHidden = false
@@ -92,9 +97,7 @@ public extension UIView {
                 if finished {
                     view.alpha = 1.0
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         case .flip:
@@ -144,9 +147,7 @@ public extension UIView {
                     view.alpha = 1.0
                     view.transform = CGAffineTransform.identity
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         case .translation:
@@ -175,9 +176,7 @@ public extension UIView {
                 if finished {
                     view.transform = CGAffineTransform.identity
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         }
@@ -189,16 +188,20 @@ public extension UIView {
     ///   - direction: 动画方向，默认为 .none，特定的动画类型需要指定方向
     ///   - duration: 动画时间，默认 0.3秒
     ///   - completion: 动画回调
-    func hideViewAnimated(_ animation: AnimationType,
-                  direction: AnimationDirection = .none,
-                  duration: TimeInterval = 0.3,
-                  completion: ((_ finished: Bool) -> Void)? = nil) {
+    func hide(with animation: AnimationType,
+              direction: AnimationDirection = .none,
+              duration: TimeInterval = 0.3,
+              completion: ((_ finished: Bool) -> Void)? = nil) {
         let view = self
         if view.isHidden, view.alpha <= 0.0 {
             return
         }
         view.layer.removeAllAnimations()
         switch animation {
+        case .none:
+            view.isHidden = true
+            completion?(true)
+            break
         case .fade:
             UIView.animate(withDuration: duration, animations: {
                 view.alpha = 0.0
@@ -206,9 +209,7 @@ public extension UIView {
                 if finished {
                     view.isHidden = true
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         case .flip:
@@ -257,9 +258,7 @@ public extension UIView {
                 if finished {
                     view.isHidden = true
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         case .translation:
@@ -286,9 +285,7 @@ public extension UIView {
                 if finished {
                     view.isHidden = true
                 }
-                if let closure = completion {
-                    closure(finished)
-                }
+                completion?(finished)
             }
             break
         }
