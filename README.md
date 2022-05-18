@@ -3,7 +3,7 @@ My development kit for iOS
 
 ## Requirements
 
-* Requires iOS 8.0 or later
+* Requires iOS 9.0 or later
 * Requires Automatic Reference Counting (ARC)
 
 ## Installation with CocoaPods
@@ -84,7 +84,6 @@ import ZXToolboxSwift
 * ZXSemaphoreSwift
 * ZXTableViewCellModel
 * ZXTitleBarController
-* ZXURL
 
 ## Extensions
 

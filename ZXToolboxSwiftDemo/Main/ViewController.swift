@@ -16,8 +16,7 @@ class ViewController: UITableViewController {
             "ZXLocale",
             "ZXSemaphoreSwift",
             "ZXTableViewCellModel",
-            "ZXTitleBarController",
-            "ZXURL"
+            "ZXTitleBarController"
         ],
         "Extensions": [
             "CAGradientLayer+Direction",
