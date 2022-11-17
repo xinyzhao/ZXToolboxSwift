@@ -26,7 +26,7 @@
 import UIKit
 
 /// 通过类名或 Nib 创建 Cell
-open class ZXTableViewCellModel: NSObject {
+open class ZXTableViewCellModel: NSObject, NSCopying {
     /// 标识符
     open var identifier: String?
     
@@ -47,7 +47,7 @@ open class ZXTableViewCellModel: NSObject {
     /// - Parameters:
     ///   - identifier: 标识符
     ///   - data: 用户数据
-    public init(_ identifier: String, userData: Any? = nil) {
+    public init(_ identifier: String?, userData: Any? = nil) {
         super.init()
         self.identifier = identifier
         self.userData = userData
@@ -59,7 +59,7 @@ open class ZXTableViewCellModel: NSObject {
     ///   - classModule: 类型 Module，不指定则默认使用 `CFBundleName`
     ///   - className: 类名
     ///   - userData: 用户数据
-    public init(_ identifier: String, classModule: String? = nil, className: String? = nil, userData: Any? = nil) {
+    public init(_ identifier: String?, classModule: String? = nil, className: String? = nil, userData: Any? = nil) {
         super.init()
         self.identifier = identifier
         self.classModule = classModule
@@ -75,7 +75,7 @@ open class ZXTableViewCellModel: NSObject {
     ///   - nibBundle: Bundle 名称
     ///   - nibName: Nib 名称
     ///   - userData: 用户数据
-    public init(_ identifier: String, classModule: String? = nil, className: String? = nil, nibBundle: String? = nil, nibName: String? = nil, userData: Any? = nil) {
+    public init(_ identifier: String?, classModule: String? = nil, className: String? = nil, nibBundle: String? = nil, nibName: String? = nil, userData: Any? = nil) {
         super.init()
         self.identifier = identifier
         self.classModule = classModule
@@ -83,6 +83,26 @@ open class ZXTableViewCellModel: NSObject {
         self.nibBundle = nibBundle
         self.nibName = nibName
         self.userData = userData
+    }
+    
+
+    /// Returns a new instance that’s a copy of the receiver.
+    /// - Parameter zone: This parameter is ignored. Memory zones are no longer used by Objective-C.
+    /// - Returns: A new object
+    public func copy(with zone: NSZone? = nil) -> Any {
+        return ZXTableViewCellModel(identifier, classModule: classModule, className: className, nibBundle: nibBundle, nibName: nibName)
+    }
+    
+    /// Creates and returns a new cell using the class or nib file
+    /// - Returns: A UITableViewCell object or nil
+    open func createCell() -> UITableViewCell? {
+        if let nib = loadNib() {
+            return nib.instantiate(withOwner: nil).first as? UITableViewCell
+        }
+        if let cls = loadClass() as? UITableViewCell.Type {
+            return cls.init(style: .default, reuseIdentifier: identifier)
+        }
+        return nil
     }
     
     /// 注册 Cell
