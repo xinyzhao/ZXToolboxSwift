@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		7049B15E2543E2C800AEAC42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7049B15C2543E2C800AEAC42 /* LaunchScreen.storyboard */; };
 		7049B16A2543E31F00AEAC42 /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; };
 		7049B16B2543E31F00AEAC42 /* ZXToolboxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		704F22862A384F9A00ACEFB0 /* ZXToolboxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F22852A384F9A00ACEFB0 /* ZXToolboxSwiftTests.swift */; };
+		704F22872A384F9A00ACEFB0 /* ZXToolboxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */; platformFilter = ios; };
 		7069B694254C180A00E4DFAD /* CAGradientLayerDirectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */; };
 		70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656B926117C4300EC5194 /* ZXLocale.swift */; };
 		70A656C52611D12500EC5194 /* ZXLocaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A656C42611D12500EC5194 /* ZXLocaleController.swift */; };
@@ -42,6 +44,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		7049B16C2543E31F00AEAC42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70C8306D23AB1DF2005D0C0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70C8307523AB1DF2005D0C0B;
+			remoteInfo = ZXToolboxSwift;
+		};
+		704F22882A384F9A00ACEFB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 70C8306D23AB1DF2005D0C0B /* Project object */;
 			proxyType = 1;
@@ -81,6 +90,8 @@
 		7049B15A2543E2C800AEAC42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7049B15D2543E2C800AEAC42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7049B15F2543E2C800AEAC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		704F22832A384F9A00ACEFB0 /* ZXToolboxSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXToolboxSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		704F22852A384F9A00ACEFB0 /* ZXToolboxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXToolboxSwiftTests.swift; sourceTree = "<group>"; };
 		7069B693254C180A00E4DFAD /* CAGradientLayerDirectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayerDirectionController.swift; sourceTree = "<group>"; };
 		70A656B926117C4300EC5194 /* ZXLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXLocale.swift; sourceTree = "<group>"; };
 		70A656C42611D12500EC5194 /* ZXLocaleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXLocaleController.swift; sourceTree = "<group>"; };
@@ -110,6 +121,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7049B16A2543E31F00AEAC42 /* ZXToolboxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		704F22802A384F9A00ACEFB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704F22872A384F9A00ACEFB0 /* ZXToolboxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +162,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		704F22842A384F9A00ACEFB0 /* ZXToolboxSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				704F22852A384F9A00ACEFB0 /* ZXToolboxSwiftTests.swift */,
+			);
+			path = ZXToolboxSwiftTests;
 			sourceTree = "<group>";
 		};
 		7069B692254C17E900E4DFAD /* Extensions */ = {
@@ -195,6 +222,7 @@
 				701017D423BB544D00F0CF9A /* ZXToolboxSwift.podspec */,
 				70C8307823AB1DF2005D0C0B /* ZXToolboxSwift */,
 				7049B1502543E2C100AEAC42 /* ZXToolboxSwiftDemo */,
+				704F22842A384F9A00ACEFB0 /* ZXToolboxSwiftTests */,
 				70C8307723AB1DF2005D0C0B /* Products */,
 				7049B1692543E31F00AEAC42 /* Frameworks */,
 			);
@@ -205,6 +233,7 @@
 			children = (
 				70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */,
 				7049B14F2543E2C100AEAC42 /* ZXToolboxSwiftDemo.app */,
+				704F22832A384F9A00ACEFB0 /* ZXToolboxSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,6 +316,24 @@
 			productReference = 7049B14F2543E2C100AEAC42 /* ZXToolboxSwiftDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		704F22822A384F9A00ACEFB0 /* ZXToolboxSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 704F228C2A384F9A00ACEFB0 /* Build configuration list for PBXNativeTarget "ZXToolboxSwiftTests" */;
+			buildPhases = (
+				704F227F2A384F9A00ACEFB0 /* Sources */,
+				704F22802A384F9A00ACEFB0 /* Frameworks */,
+				704F22812A384F9A00ACEFB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				704F22892A384F9A00ACEFB0 /* PBXTargetDependency */,
+			);
+			name = ZXToolboxSwiftTests;
+			productName = ZXToolboxSwiftTests;
+			productReference = 704F22832A384F9A00ACEFB0 /* ZXToolboxSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		70C8307523AB1DF2005D0C0B /* ZXToolboxSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70C8308A23AB1DF2005D0C0B /* Build configuration list for PBXNativeTarget "ZXToolboxSwift" */;
@@ -311,12 +358,15 @@
 		70C8306D23AB1DF2005D0C0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = xinyzhao;
 				TargetAttributes = {
 					7049B14E2543E2C100AEAC42 = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					704F22822A384F9A00ACEFB0 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 					70C8307523AB1DF2005D0C0B = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -338,6 +388,7 @@
 			targets = (
 				70C8307523AB1DF2005D0C0B /* ZXToolboxSwift */,
 				7049B14E2543E2C100AEAC42 /* ZXToolboxSwiftDemo */,
+				704F22822A384F9A00ACEFB0 /* ZXToolboxSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,6 +404,13 @@
 				70FC42F72758E03000E056DC /* ZXTableViewCellNib.xib in Resources */,
 				70A656D32611D63A00EC5194 /* i18n.bundle in Resources */,
 				70FC42F12758DFD000E056DC /* ZXTableViewCell.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		704F22812A384F9A00ACEFB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +444,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		704F227F2A384F9A00ACEFB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704F22862A384F9A00ACEFB0 /* ZXToolboxSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70C8307223AB1DF2005D0C0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +475,12 @@
 			isa = PBXTargetDependency;
 			target = 70C8307523AB1DF2005D0C0B /* ZXToolboxSwift */;
 			targetProxy = 7049B16C2543E31F00AEAC42 /* PBXContainerItemProxy */;
+		};
+		704F22892A384F9A00ACEFB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 70C8307523AB1DF2005D0C0B /* ZXToolboxSwift */;
+			targetProxy = 704F22882A384F9A00ACEFB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,6 +539,50 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.xinyzhao.ZXToolboxSwiftDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		704F228A2A384F9A00ACEFB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VYD4F26DN3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		704F228B2A384F9A00ACEFB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VYD4F26DN3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.xinyzhao.ZXToolboxSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -654,6 +770,15 @@
 			buildConfigurations = (
 				7049B1602543E2C800AEAC42 /* Debug */,
 				7049B1612543E2C800AEAC42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		704F228C2A384F9A00ACEFB0 /* Build configuration list for PBXNativeTarget "ZXToolboxSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				704F228A2A384F9A00ACEFB0 /* Debug */,
+				704F228B2A384F9A00ACEFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
