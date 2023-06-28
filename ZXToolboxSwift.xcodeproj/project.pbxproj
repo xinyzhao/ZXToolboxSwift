@@ -30,6 +30,7 @@
 		70B276E226E20F6C00C4E63A /* ZXSemaphoreSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B276E126E20F6C00C4E63A /* ZXSemaphoreSwift.swift */; };
 		70B276E526E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */; };
 		70B9BF2D267C99B000869E90 /* ZXTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B9BF2C267C99B000869E90 /* ZXTableViewCellModel.swift */; };
+		70BF23FB2A4C05880024C93E /* String+subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF23FA2A4C05880024C93E /* String+subscript.swift */; };
 		70BFC88B2550FC870098A3CD /* DispatchQueueEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */; };
 		70C8308723AB1DF2005D0C0B /* ZXToolboxSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F92A1D24F7A6F300CCC2E5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */; };
@@ -92,6 +93,7 @@
 		70B276E126E20F6C00C4E63A /* ZXSemaphoreSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXSemaphoreSwift.swift; sourceTree = "<group>"; };
 		70B276E426E20FAA00C4E63A /* ZXSemaphoreSwiftController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXSemaphoreSwiftController.swift; sourceTree = "<group>"; };
 		70B9BF2C267C99B000869E90 /* ZXTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZXTableViewCellModel.swift; sourceTree = "<group>"; };
+		70BF23FA2A4C05880024C93E /* String+subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+subscript.swift"; sourceTree = "<group>"; };
 		70BFC88A2550FC870098A3CD /* DispatchQueueEventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueEventController.swift; sourceTree = "<group>"; };
 		70C8307623AB1DF2005D0C0B /* ZXToolboxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZXToolboxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C8307923AB1DF2005D0C0B /* ZXToolboxSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXToolboxSwift.h; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				701017DA23BB548E00F0CF9A /* CAGradientLayer+Direction.swift */,
 				5D01DC2F241B6F69004989FB /* DispatchQueue+Event.swift */,
+				70BF23FA2A4C05880024C93E /* String+subscript.swift */,
 				701017DD23BB548E00F0CF9A /* UIView+HiddenAnimated.swift */,
 				70F92A1C24F7A6F300CCC2E5 /* UIViewController+Alert.swift */,
 			);
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BF23FB2A4C05880024C93E /* String+subscript.swift in Sources */,
 				701017DF23BB548E00F0CF9A /* CAGradientLayer+Direction.swift in Sources */,
 				70A656BA26117C4300EC5194 /* ZXLocale.swift in Sources */,
 				70B276E226E20F6C00C4E63A /* ZXSemaphoreSwift.swift in Sources */,
